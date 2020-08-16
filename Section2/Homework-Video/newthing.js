@@ -1,1 +1,0 @@
-alert("Hello! I am Nam. This is just a test");
