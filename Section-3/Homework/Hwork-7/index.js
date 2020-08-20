@@ -13,5 +13,6 @@ for (let i = 0; i < arrNumbers.length; i++) {
     }
 }
 if(!isFound){
-    alert(`${num} number is not found in the array`);
+    alert(`${num} number is not found in the array`); 
+    console.log(`Update`);
 }
