@@ -24,7 +24,8 @@ while (true) {
         } else if (customerOrder == `u`) {
             let positionUpdate = Number(prompt(`Enter the position you want to update`));
             while (positionUpdate >= arrayItems.length) {
-                positionUpdate = Number(prompt(`Enter the position you want to update`));
+                alert(`The number you pass is larger than array length -1`);
+                positionUpdate = Number(prompt(`Enter the position you want to update again`));
             }
             arrayItems[positionUpdate] = prompt(`Enter the new name`);
         } else if (customerOrder == `d`) {
