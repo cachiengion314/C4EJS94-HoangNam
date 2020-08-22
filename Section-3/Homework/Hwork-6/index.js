@@ -2,7 +2,7 @@ console.log(`6. Write a script asking users to enter a sequence of numbers, the 
 `);
 let sequenceNumbers = prompt(`Enter a sequence of numbers`);
 let arrNumbers = sequenceNumbers.split(`,`);
-let smallestNum = 10000;
+let smallestNum = arrNumbers[0];
 for (let i = 0; i < arrNumbers.length; i++) {
     arrNumbers[i] = parseFloat(arrNumbers[i]);
     if (arrNumbers[i] <= smallestNum) {
