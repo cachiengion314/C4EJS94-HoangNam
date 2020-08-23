@@ -942,7 +942,7 @@ The hits property is where the job results are stored, is it a Number, String, A
 `);
 let hits;
 ({ hits } = dataJobSearch);
-console.log(typeof hits);
+console.log(`hits property is a array`);
 
 console.log(`3.3
 In each hit of hits, how to find the job’s title, locations, salary, benefits, skills and requirements
@@ -950,7 +950,8 @@ In each hit of hits, how to find the job’s title, locations, salary, benefits,
 console.log(dataJobSearch);
 let jobTitle, locations, salary, benefits, skills, requirements;
 
-({jobTitle, locations, salary, benefits, skills, requirements
+({
+    jobTitle, locations, salary, benefits, skills, requirements
 } = dataJobSearch.hits[0]);
 console.log(`jobTitle : ${jobTitle}`);
 console.log(`locations: ${locations}`);
