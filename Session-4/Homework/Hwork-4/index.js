@@ -18,20 +18,4 @@ let dataDictionary = {
     UI means User Interface, UX mean User Experience, are the process to define how your products looks and feels
     `,
 };
-console.log(`4.1 
-Write a script to simulate the lookup of the dictionary initialized in the previous example
-`);
-let debug, done, defect, pm, uiux;
-({ debug, done, defect, pm, uiux } = dataDictionary);
-let keywordArr = [debug, done, defect, pm, uiux];
-let wordArr = [`debug`, `done`, `defect`, `pm`, `ui/ux`];
-alert(`Hi there, this is dev dictionary`);
-while (true) {
-    let keyword = prompt(`Please enter a keyword`);
-    if (wordArr.indexOf(keyword) != -1) {
-        alert(keywordArr[wordArr.indexOf(keyword)]);
-    } else {
-        alert(`We could not find your word: ${keyword}, 
-        please give more explanation`);
-    }
-}
+
