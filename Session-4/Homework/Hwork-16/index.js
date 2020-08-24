@@ -13,7 +13,7 @@ const oldData = {
     },
 };
 console.log(oldData);
-
+console.log(`Delete a property using create new object`);
 let newData = {
     firedRice: {
         Price: 30,
@@ -25,3 +25,6 @@ let newData = {
     },
 };
 console.log(newData);
+console.log(`Delete a property using delete func`);
+delete oldData[`noddle`];
+console.log(oldData);
