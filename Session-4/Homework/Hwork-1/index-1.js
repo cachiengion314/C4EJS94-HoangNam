@@ -15,11 +15,8 @@ property of object product`);
 
 console.log(`1.2 Use for loop to print/log out`);
 for (let x in product) {
-    console.log(`\n
- name: ${x.toString()} \n
- price: ${x} \n
- brand: ${x} \n
- color: ${x} \n
+    console.log(`
+  ${x} : ${product[x]}
  `);
 }
 console.log(product.name);
