@@ -14,3 +14,18 @@ for (let i = 0; i < arrOddNumbers.length; i++) {
     }
 }
 alert(strModified);
+// let arr = [1, 2, 3, 4, 5];
+// let func = (item1, item2) => { return item1 + item2; };
+// console.log(func(3, 4));
+// console.log(
+//     arr.reduce(
+//         (itemA, itemB) => { return itemA + itemB; },0
+//     )
+// );
+
+// function myConcat(separator) {
+//     let args = Array.prototype.slice.call(arguments, 1);
+//     return args.join(separator);
+//   }
+//   console.log(
+//        myConcat(', ', 'red', 'orange', 'blue'));
