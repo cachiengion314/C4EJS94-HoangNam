@@ -8,9 +8,9 @@ const task = {
     dueDate: `2019-10-08T18:00:24+0000`,
     expectedHours: 0.5,
 };
-var subject, dueDate, assignTo; ({subject, dueDate, assignTo} = task);
+var { subject, dueDate, assignTo } = task;
 console.log(` \n
 subject: ${subject} \n
 dueDate: ${dueDate} \n
 assignTo: ${assignTo}
-`) ;
+`);
