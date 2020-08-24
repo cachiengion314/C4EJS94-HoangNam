@@ -1,37 +1,50 @@
 let learningTask = {
-    HTML: false,
-    CSS: false,
-    NodePackageManager: false,
-    Git: false,
+    task:
+        [
+            {
+                HTML: "",
+                Complete: false,
+            },
+            {
+                CSS: "",
+                Complete: false,
+            },
+            {
+                BasicOfJavaScript: "",
+                Complete: false,
+            },
+            {
+                NodePackageManager: "",
+                Complete: false,
+            },
+            {
+                Git: "",
+                Complete: false,
+            },
+        ]
 }
 console.log(`6.3`);
 // let HTML, CSS, NodePackageManager, Git;
 // ({ HTML, CSS, NodePackageManager, Git } = learningTask);
-let propertysArr = [`HTML`, `CSS`, `NodePackageManager`, `Git`];
+let propertysArr = [`HTML`, `CSS`, `BasicOfJavaScript`, `NodePackageManager`, `Git`];
 if (true) {
     let strCommand = prompt(`Please enter your command(New, Delete, Update, Complete)`);
-
     if (strCommand == `new`) {
-        let strContent = prompt(`Enter new task`);
-        learningTask[strContent] = false;
-    } else if (strCommand == `update`) {
-        let pos = prompt(`Enter position`);
-        let title = prompt(`Enter new title`);
-        delete learningTask[propertysArr[pos]];
-        propertysArr.splice(pos, 1);
-        propertysArr.push(title);
-        learningTask[title] = false;
-        console.log(learningTask);
-        console.log(propertysArr);
-    } else if (strCommand == `complete`) {
-        let numCommandComplete = Number(prompt(`Please enter postion`));
+        let newObject = {};
+        newObject[strContent] = "";
+        newObject[`Complete`] = false;
 
+        learningTask.task.push(newObject);
+    }
+    else if (strCommand == `update`) {
+        let posUpdate = prompt(`Enter position`);
+        let title = prompt(`Enter new title`);
+        delete learningTask.task[posUpdate][propertysArr[posUpdate]];
+        propertysArr[posUpdate] = title;
+        learningTask.task[posUpdate][title] = "";
+    } else if (strCommand == `complete`) {
+        let posComplete = prompt(`Enter position`);
+        learningTask.task[posComplete].Complete = true;
     }
 }
-function renameKey(old_key,new_key){
-    if (old_key !== new_key) {
-        Object.defineProperty(o, new_key,
-            Object.getOwnPropertyDescriptor(o, old_key));
-        delete o[old_key];
-    }
-}
+console.log(learningTask);

@@ -11,8 +11,27 @@ Complete: false
 Complete: false
 `);
 let learningTask = {
-    HTML: false,
-    CSS: false,
-    NodePackageManager: false,
-    Git: false,
+    task:
+        [
+            {
+                HTML: "",
+                Complete: false,
+            },
+            {
+                CSS: "",
+                Complete: false,
+            },
+            {
+                BasicOfJavaScript: "",
+                Complete: false,
+            },
+            {
+                NodePackageManager: "",
+                Complete: false,
+            },
+            {
+                Git: "",
+                Complete: false,
+            },
+        ]
 }

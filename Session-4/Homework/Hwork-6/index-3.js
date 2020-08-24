@@ -1,24 +1,48 @@
 let learningTask = {
-    HTML: false,
-    CSS: false,
-    NodePackageManager: false,
-    Git: false,
+    task:
+        [
+            {
+                HTML: "",
+                Complete: false,
+            },
+            {
+                CSS: "",
+                Complete: false,
+            },
+            {
+                BasicOfJavaScript: "",
+                Complete: false,
+            },
+            {
+                NodePackageManager: "",
+                Complete: false,
+            },
+            {
+                Git: "",
+                Complete: false,
+            },
+        ]
 }
 console.log(`6.3`);
 // let HTML, CSS, NodePackageManager, Git;
 // ({ HTML, CSS, NodePackageManager, Git } = learningTask);
-let propertysArr = [`HTML`, `CSS`, `NodePackageManager`, `Git`];
+let propertysArr = [`HTML`, `CSS`, `BasicOfJavaScript`, `NodePackageManager`, `Git`];
 if (true) {
     let strCommand = prompt(`Please enter your command(New, Delete, Update, Complete)`);
-
     if (strCommand == `new`) {
-        let strContent = prompt(`Enter new task`);
-        learningTask[strContent] = false;
-    } else if (strCommand == `update`) {
+        let newObject = {};
+        newObject[strContent] = "";
+        newObject[`Complete`] = false;
+
+        learningTask.task.push(newObject);
+    }
+    else if (strCommand == `update`) {
         let pos = prompt(`Enter position`);
         let title = prompt(`Enter new title`);
-        delete learningTask[propertysArr[pos]];
-        learningTask[title] = false;
-        console.log(learningTask);
+
+        delete learningTask.task[pos][propertysArr[pos]];
+        propertysArr[pos] = title;
+        learningTask.task[pos][title] = "";
     }
 }
+console.log(learningTask);
