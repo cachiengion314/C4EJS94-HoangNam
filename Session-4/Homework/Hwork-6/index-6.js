@@ -52,7 +52,13 @@ if (true) {
 }
 console.log(learningTask);
 for (let i = 0; i < learningTask.task.length; i++) {
-    console.log(`
-${i} [${learningTask.task[i][propertysArr[i]]}] ${Object.keys(learningTask.task[i])[0]}
-    `)
+    if (Object.keys(learningTask.task[i])[0] != `Complete`) {
+        console.log(`
+        ${i} [${learningTask.task[i][propertysArr[i]]}] ${Object.keys(learningTask.task[i])[0]}
+            `);
+    } else {
+        console.log(`
+        ${i} [${learningTask.task[i][propertysArr[i]]}] ${Object.keys(learningTask.task[i])[1]}
+            `);
+    }
 }
