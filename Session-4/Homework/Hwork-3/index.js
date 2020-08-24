@@ -948,14 +948,23 @@ console.log(`3.3
 In each hit of hits, how to find the job’s title, locations, salary, benefits, skills and requirements
 `)
 console.log(dataJobSearch);
-let jobTitle, locations, salary, benefits, skills, requirements;
+let jobTitle, locations, jobSalary, benefits, skills, jobRequirement;
 
 ({
-    jobTitle, locations, salary, benefits, skills, requirements
+    jobTitle, locations, jobSalary, benefits, skills, jobRequirement
 } = dataJobSearch.hits[0]);
 console.log(`jobTitle : ${jobTitle}`);
-console.log(`locations: ${locations}`);
-console.log(`salary: ${salary}`);
-console.log(`benefits: ${benefits}`);
-console.log(`skills: ${skills}`);
-console.log(`requirements: ${requirements}`);
+// console.log(`locations: ${locations}`);
+for(let i = 0; i< locations.length; i++){
+    console.log(locations[i]);
+}
+console.log(`salary: ${jobSalary}`);
+console.log(`benefits: `);
+for(let i = 0; i< benefits.length; i++){
+    console.log(benefits[i]);
+}
+console.log(`skills: `);
+for(let i = 0; i< skills.length; i++){
+    console.log(skills[i]);
+}
+console.log(`requirements: ${jobRequirement}`);
