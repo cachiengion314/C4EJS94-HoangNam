@@ -242,7 +242,7 @@ let data = [
         rightChoice: 3,
     },
     {
-        question: `What is the name the most groos movie of all time?`,
+        question: `What is the name the most gross movie of all time?`,
         one: `Titanic`,
         two: `Avenger`,
         three: `Ironman`,
@@ -314,4 +314,3 @@ while (count < data.length) {
 }
 alert(`We are out of questions`);
 alert(`You have answered correctly ${scoreCount} out of ${data.length} question`);
-
