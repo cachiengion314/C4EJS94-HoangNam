@@ -270,13 +270,12 @@ let questionIndexArr = [];
 for (let i = 0; i < data.length; i++) {
     questionIndexArr.push(i);
 }
-let count = 0;
 let scoreCount = 0;
 let randomIndexData = Math.floor(Math.random() * data.length);
 let { one, two, three, four } = data[randomIndexData];
 let propertyOfObjectOriginArr = [one, two, three, four];
 
-while (count < data.length) {
+while (true) {
     // random property value generator
     let propertyOfObjectArr = [one, two, three, four];
     let indexOfRightChoice = data[randomIndexData].rightChoice - 1;
@@ -304,7 +303,7 @@ while (count < data.length) {
     } else {
         alert(`Wrong!`);
     }
-    count++;
+ 
     let index = questionIndexArr.indexOf(randomIndexData);
     questionIndexArr.splice(index, 1);
     randomIndexData = questionIndexArr[Math.floor(Math.random() * questionIndexArr.length)];
