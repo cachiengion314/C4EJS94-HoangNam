@@ -113,12 +113,185 @@ const inventory = [
 
     },]
 /// 3
-console.log(`
-    The above data is good to deal with all of the laptops equally, 
-    but when it comes to grouping the items by brand, 
-    it should be reshaped as below. Write a program 
-    to do the reshaping from inventory, from now, use the reshaped data to process
-    `);
+// console.log(`
+//     The above data is good to deal with all of the laptops equally, 
+//     but when it comes to grouping the items by brand, 
+//     it should be reshaped as below. Write a program 
+//     to do the reshaping from inventory, from now, use the reshaped data to process
+//     `);
+// let brandObject = {
+//     asus: [
+
+//     ],
+//     dell: [
+
+//     ],
+//     hp: [
+
+//     ],
+// }
+// let { asus, dell, hp } = brandObject;
+
+// inventory.map(function (item) {
+//     if (item.brand == `HP`) {
+//         hp.push(item);
+//     } else if (item.brand == `Dell`) {
+//         dell.push(item);
+//     } else if (item.brand == `Asus`) {
+//         asus.push(item);
+//     }
+// });
+// (brandObject = { asus, dell, hp });
+// console.log(brandObject);
+/// 4
+// let brandObject = {
+//     asus: [
+
+//     ],
+//     dell: [
+
+//     ],
+//     hp: [
+
+//     ],
+// }
+// let { asus, dell, hp } = brandObject;
+
+// inventory.map(function (item) {
+//     if (item.brand == `HP`) {
+//         hp.push(item);
+//     } else if (item.brand == `Dell`) {
+//         dell.push(item);
+//     } else if (item.brand == `Asus`) {
+//         asus.push(item);
+//     }
+// });
+// (brandObject = { asus, dell, hp });
+// console.log(brandObject);
+
+// let areStr = `are`;
+// let brandNameArr = Object.keys(brandObject);
+// let brandPropertyArr = [];
+// for (let name in brandObject) {
+//     let propertyVar = brandObject[name];
+//     brandPropertyArr.push(propertyVar);
+// }
+// let brand = prompt(`Which brand?`).toLowerCase();
+// if (brandNameArr.includes(brand)) {
+//     let index = brandNameArr.indexOf(brand);
+//     let numberOfGen = brandPropertyArr[index].length;
+//     if (numberOfGen < 2) {
+//         areStr = `is`;
+//     }
+//     alert(`
+//   There ${areStr} ${numberOfGen} generations of ${brand.toUpperCase()}
+//   in inventory
+//   `);
+// } else {
+//     alert(`You type all wrong! The end!`);
+// }
+/// 5
+// let brandObject = {
+//     asus: [
+
+//     ],
+//     dell: [
+
+//     ],
+//     hp: [
+
+//     ],
+// }
+// let { asus, dell, hp } = brandObject;
+
+// inventory.map(function (item) {
+//     if (item.brand == `HP`) {
+//         hp.push(item);
+//     } else if (item.brand == `Dell`) {
+//         dell.push(item);
+//     } else if (item.brand == `Asus`) {
+//         asus.push(item);
+//     }
+// });
+// (brandObject = { asus, dell, hp });
+
+// let areStr = `are`;
+// let brandNameArr = Object.keys(brandObject);
+
+// let brand = prompt(`Which brand?`).toLowerCase();
+// if (brandNameArr.includes(brand)) {
+
+//     let numberOfGen = brandObject[brand].length;
+//     if (numberOfGen < 2) {
+//         areStr = `is`;
+//     }
+//     let messenger = ``;
+//     for (let i = 0; i < brandObject[brand].length; i++) {
+//         messenger += brandObject[brand][i].name + `\n`;
+//     }
+//     alert(`
+//   There ${areStr} ${numberOfGen} generations of ${brand.toUpperCase()}
+//   in inventory
+// ${messenger}
+//   `);
+// } else {
+//     alert(`You type all wrong! The end!`);
+// }
+/// 6
+// let brandObject = {
+//     asus: [
+
+//     ],
+//     dell: [
+
+//     ],
+//     hp: [
+
+//     ],
+// }
+// let { asus, dell, hp } = brandObject;
+
+// inventory.map(function (item) {
+//     if (item.brand == `HP`) {
+//         hp.push(item);
+//     } else if (item.brand == `Dell`) {
+//         dell.push(item);
+//     } else if (item.brand == `Asus`) {
+//         asus.push(item);
+//     }
+// });
+// (brandObject = { asus, dell, hp });
+
+// let areStr = `are`;
+// let brandNameArr = Object.keys(brandObject);
+
+// let brand = prompt(`Which brand?`).toLowerCase();
+// if (brandNameArr.includes(brand)) {
+
+//     let numberOfGen = brandObject[brand].length;
+//     if (numberOfGen < 2) {
+//         areStr = `is`;
+//     }
+//     let messenger = ``;
+//     let sumup = 0;
+//     for (let i = 0; i < brandObject[brand].length; i++) {
+//         messenger += brandObject[brand][i].name + `\n`;
+//         sumup += Number(
+//             brandObject[brand][i].price * brandObject[brand][i].quantity
+//             );
+//     }
+//     alert(`
+//   There ${areStr} ${numberOfGen} generations of ${brand.toUpperCase()}
+//   in inventory
+
+// ${messenger}
+
+// With total value: ${sumup} K
+//   `);
+// } else {
+//     alert(`You type all wrong! The end!`);
+// }
+/// 7
 let brandObject = {
     asus: [
 
@@ -133,21 +306,39 @@ let brandObject = {
 let { asus, dell, hp } = brandObject;
 
 inventory.map(function (item) {
-    if (item.brand == `HP`) {
-        hp.push(item);
-    } else if (item.brand == `Dell`) {
-        dell.push(item);
-    } else if (item.brand == `Asus`) {
-        asus.push(item);
-    }
+    let brand = item.brand
+    brandObject[brand.toLowerCase()].push(item);
 });
-
-(brandObject = { asus, dell, hp });
 console.log(brandObject);
+(brandObject = { asus, dell, hp });
 
-let arr = [1, 2, 3, 4, 5];
-arr.map(function (item) {
-     item * 2;
-    
-});
-console.log(arr);
+let areStr = `are`;
+let brandNameArr = Object.keys(brandObject);
+
+let brand = prompt(`Which brand?`).toLowerCase();
+if (brandNameArr.includes(brand)) {
+
+    let numberOfGen = brandObject[brand].length;
+    if (numberOfGen < 2) {
+        areStr = `is`;
+    }
+    let messenger = ``;
+    let sumup = 0;
+    for (let i = 0; i < brandObject[brand].length; i++) {
+        messenger += brandObject[brand][i].name + `\n`;
+        sumup += Number(
+            brandObject[brand][i].price * brandObject[brand][i].quantity
+        );
+    }
+    sumup *= 1000;
+    alert(`
+  There ${areStr} ${numberOfGen} generations of ${brand.toUpperCase()}
+  in inventory
+
+${messenger}
+
+With total value: ${sumup.toLocaleString()} VND
+  `);
+} else {
+    alert(`You type all wrong! The end!`);
+}
