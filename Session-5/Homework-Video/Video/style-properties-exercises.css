@@ -115,14 +115,29 @@ div {
 
 /* properties-Box-Model(2) */
 
-#a>div {
+
+/* #a>div {
     background: wheat;
     position: relative;
-    left: 40px;
-    right: -40px;
+    Margin: 50px 40px 50px 40px;
 }
 
 #a {
-    /* DO NOT insert code here */
     border: 1px solid black
+} */
+
+
+/* properties-Box-Model(3) */
+
+div {
+    width: 200px;
+    height: 200px;
+    font-size: 2em;
+    background: wheat;
+}
+
+span {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
 }
