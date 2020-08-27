@@ -104,9 +104,25 @@ div {
 
 /* properties-Box-Model(1) */
 
-div {
+
+/* div {
     background: wheat;
     width: 400px;
     border: 2px solid green;
     padding: 50px 40px 45px 45px;
+} */
+
+
+/* properties-Box-Model(2) */
+
+#a>div {
+    background: wheat;
+    position: relative;
+    left: 40px;
+    right: -40px;
+}
+
+#a {
+    /* DO NOT insert code here */
+    border: 1px solid black
 }
