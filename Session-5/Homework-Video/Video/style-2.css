@@ -38,6 +38,9 @@ span:first-child{
 /* 9 */
 div{
     background-color: wheat;
-    /* Insert code below */
-  
+    color: red;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: bold;
   }
