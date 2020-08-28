@@ -297,11 +297,11 @@ let brandObject = {
 }
 
 inventory.map(function (item) {
-    let brand = item.brand;
-    if (brandObject[brand.toLocaleLowerCase()] == undefined) {
-        brandObject[brand.toLocaleLowerCase()] = [];
+
+    if (brandObject[item.brand.toLocaleLowerCase()] == undefined) {
+        brandObject[item.brand.toLocaleLowerCase()] = [];
     }
-    brandObject[brand.toLowerCase()].push(item);
+    brandObject[item.brand.toLowerCase()].push(item);
 });
 console.log(brandObject);
 
