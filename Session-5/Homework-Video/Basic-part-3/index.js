@@ -293,24 +293,26 @@ const inventory = [
 // }
 /// 7
 let brandObject = {
-    asus: [
+    // asus: [
 
-    ],
-    dell: [
+    // ],
+    // dell: [
 
-    ],
-    hp: [
+    // ],
+    // hp: [
 
-    ],
+    // ],
 }
-let { asus, dell, hp } = brandObject;
+
 
 inventory.map(function (item) {
     let brand = item.brand
+    if (brandObject[brand.toLocaleLowerCase()] == undefined) {
+        brandObject[brand.toLocaleLowerCase()] = [];
+    }
     brandObject[brand.toLowerCase()].push(item);
 });
 console.log(brandObject);
-(brandObject = { asus, dell, hp });
 
 let areStr = `are`;
 let brandNameArr = Object.keys(brandObject);
