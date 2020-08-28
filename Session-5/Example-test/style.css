@@ -34,7 +34,7 @@
     height: 700px;
     background: rgb(226, 243, 237);
     border: rgba(0, 0, 0, 0.253) solid 10px;
-    padding: 10px 10px 10px 10px;
+    padding: 0px 0px 0px 0px;
     margin: 10px 0px 10px 0px;
     text-align: center;
     color: rgb(95, 6, 6);
@@ -43,7 +43,12 @@
 .post_right_img {
     position: relative;
     width: 100%;
-    top: 50px;
+    top: 10px;
+}
+
+.post_right_child {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
 }
 
 .post_third {
