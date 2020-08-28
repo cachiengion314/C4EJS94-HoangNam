@@ -293,20 +293,11 @@ const inventory = [
 // }
 /// 7
 let brandObject = {
-    // asus: [
 
-    // ],
-    // dell: [
-
-    // ],
-    // hp: [
-
-    // ],
 }
 
-
 inventory.map(function (item) {
-    let brand = item.brand
+    let brand = item.brand;
     if (brandObject[brand.toLocaleLowerCase()] == undefined) {
         brandObject[brand.toLocaleLowerCase()] = [];
     }
