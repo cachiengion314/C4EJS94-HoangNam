@@ -1,0 +1,55 @@
+.post {
+    width: 700px;
+    height: 50px;
+    display: flex;
+    margin: 50px auto;
+}
+
+
+/* On the Left */
+
+.post_left {
+    width: 180px;
+    height: 700px;
+    background: #43a33a;
+    border: rgba(0, 0, 0, 0.253) solid 10px;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 0px 10px 10px;
+    text-align: center;
+    color: rgb(95, 6, 6);
+}
+
+.post_left_child {
+    position: relative;
+    top: 100px;
+    margin: 10px 0px 150px 0px;
+    color: rgb(255, 255, 255);
+}
+
+
+/* On the Right */
+
+.post_right {
+    width: 300px;
+    height: 700px;
+    background: rgb(226, 243, 237);
+    border: rgba(0, 0, 0, 0.253) solid 10px;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 0px 10px 0px;
+    text-align: center;
+    color: rgb(95, 6, 6);
+}
+
+.post_right_img {
+    position: relative;
+    width: 100%;
+    top: 50px;
+}
+
+.post_third {
+    background: #8ab3b4;
+    width: 200px;
+    padding: 10px 10px 10px 0px;
+    margin: 10px 10px 10px 0px;
+    color: rgb(95, 6, 6);
+}
