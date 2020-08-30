@@ -1,0 +1,44 @@
+h1{
+    color: rgb(82, 149, 236);
+}
+p{
+    background: rgb(163, 151, 151);
+}
+
+#toi_la_Nam{
+    text-decoration: underline ;
+}
+.italic{
+    font-style: italic;
+    background: rgb(66, 53, 53)
+}
+.white{
+    color: white;
+}
+[href]{
+    font-size: 60px;
+}
+
+[type="password"]{
+    border: solid;
+    size: 2px;
+}
+nav a{
+    text-decoration: line-through;
+    color: red;
+}
+nav > a{
+    color: green;
+}
+button:active{
+background: green;
+}
+input:focus{
+    border: black solid 10px;
+}
+img{
+    width: 40%;
+}
+img:hover{
+    border: gray 3px solid;
+}

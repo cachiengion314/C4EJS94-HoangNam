@@ -1,0 +1,143 @@
+/* a{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background:wheat;
+   
+    color:green;
+    text-decoration: none;
+    text-align: center;
+    line-height: 100px;
+    vertical-align: middle;
+    font-family: "Lucida Console", Courier, monospace;
+  } */
+
+
+/* backgournd (1) */
+
+
+/* div {
+    width: 500px;
+    height: 135px;
+    background: rgb(139, 134, 134);
+    background-image: url("https://i.ibb.co/99zCKDh/Layer-897.png");
+    background-repeat: no-repeat;
+} */
+
+
+/* backgournd (2) */
+
+
+/* #theFirstDiv {
+    width: 800px;
+    height: 300px;
+    background-image: url("https://pbs.twimg.com/profile_images/988272404915875840/lE7ZkrO-_400x400.jpg");
+    background-repeat: no-repeat;
+    background-size: 300px 300px;
+}
+
+div {
+    width: 800px;
+    height: 300px;
+    background-image: url("https://pbs.twimg.com/profile_images/988272404915875840/lE7ZkrO-_400x400.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+} */
+
+
+/* properties-background-Boder */
+
+
+/* div {
+    width: 200px;
+    height: 200px;
+    background: wheat;
+    font-size: 30px;
+    text-align: center;
+    line-height: 200px;
+    border: rgb(96, 164, 167) 3px solid;
+    border-radius: 25px;
+} */
+
+
+/* properties-background-Display(1) */
+
+
+/* span {
+    background: red;
+    width: 100px;
+    height: 20px;
+    display: inline-block;
+}
+
+div {
+    background: blue;
+    width: 100px;
+    height: 20px;
+    display: inline-block;
+} */
+
+
+/* properties-background-Display(2) */
+
+
+/* 
+div {
+    background: red;
+    display: inline-block;
+} */
+
+
+/* properties-background-Display(3) */
+
+
+/* #span1 {
+    background: red;
+}
+
+#span2 {
+    background: yellow;
+    width: 500px;
+    display: inline-block;
+} */
+
+
+/* properties-Box-Model(1) */
+
+
+/* div {
+    background: wheat;
+    width: 400px;
+    border: 2px solid green;
+    padding: 50px 40px 45px 45px;
+} */
+
+
+/* properties-Box-Model(2) */
+
+
+/* #a>div {
+    background: wheat;
+    position: relative;
+    Margin: 50px 40px 50px 40px;
+}
+
+#a {
+    border: 1px solid black
+} */
+
+
+/* properties-Box-Model(3) */
+
+div {
+    width: 200px;
+    height: 200px;
+    font-size: 2em;
+    background: wheat;
+}
+
+span {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+}

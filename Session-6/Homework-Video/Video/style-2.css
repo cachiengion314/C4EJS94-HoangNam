@@ -1,0 +1,46 @@
+/* 1 
+p{
+    color:red;
+    size:  24px;
+}
+/* 2 
+#Content_2{
+    color:#00FF00
+}
+/* 3 
+.px24{
+    font-size: 56px;
+}
+/* 4 
+div{
+    font-size: 3em;
+    background: wheat
+  }
+ /* 5 
+ #div2{
+     color: blue;
+ }
+ /* 6 
+ [href="_blank"]{
+     color: yellow;
+ }
+ /* 7 
+ul > li{
+    font-weight: bold;
+}
+/* 8 */
+/* div div div.item > span{
+    font-style: italic;
+}
+span:first-child{
+    font-size: 40px;
+} */
+/* 9 */
+div{
+    background-color: wheat;
+    color: red;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: bold;
+  }

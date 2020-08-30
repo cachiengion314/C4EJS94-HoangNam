@@ -9,23 +9,56 @@
 /* On the Left */
 
 .post_left {
-    width: 180px;
+    width: 280px;
     height: 700px;
     background: #43a33a;
     border: rgba(0, 0, 0, 0.253) solid 10px;
     padding: 0px 0px 0px 0px;
     margin: 10px 0px 10px 10px;
     text-align: center;
-    color: rgb(95, 6, 6);
+    color: rgb(255, 255, 255);
 }
 
 .post_left_child {
     position: relative;
-    top: 100px;
-    margin: 10px 0px 150px 0px;
+    top: 0px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
     color: rgb(255, 255, 255);
+    text-align: left;
 }
-
+.post_left_img {
+    position: relative;
+    top: 0px;
+    display: block;
+    width: 100%;
+}
+.post_left_list_2 li{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+.post_left_list_2 li div{
+   margin: 0px 5px 0px 5px;
+}
+.post_left_child_skill_progress{
+display: block;
+width: 100%;
+height: 5px;
+background: rgb(25, 107, 43);
+position: relative;
+margin: 0px 0px 0px 0px;
+}
+.post_left_child_skill_progress span{
+    height: 100%;
+    width: 60%;
+    background: rgb(228, 255, 234);
+    position: absolute;
+    padding: 0px;
+    margin: 0px;
+  
+}
 
 /* On the Right */
 
