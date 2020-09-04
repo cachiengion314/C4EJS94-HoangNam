@@ -36,8 +36,12 @@ for (let i = 0; i < items.length; i++) {
 
     let buttonElement = createRemoveButton(
         () => {
-            divTag.remove();
-            console.log(itemsDivTag.indexOf(divTag));
+            // divTag.remove();
+            let index = itemsDivTag.indexOf(divTag);
+            console.log(`index: ${index}`);
+            itemsDivTag[index].remove();
+            itemsDivTag.splice(index, 1);
+            console.log(itemsDivTag);
         });
 
     divTag.appendChild(buttonElement);
@@ -60,8 +64,12 @@ function clickAddCallback() {
     itemsDivTag.push(divTag);
     let removeButton = createRemoveButton(
         () => {
-            divTag.remove();
-            console.log(itemsDivTag.indexOf(divTag));
+            // divTag.remove();
+            let index = itemsDivTag.indexOf(divTag);
+            console.log(`index: ${index}`);
+            itemsDivTag[index].remove();
+            itemsDivTag.splice(index, 1);
+            console.log(itemsDivTag);
         }
     )
     divTag.appendChild(newItemsElement);
