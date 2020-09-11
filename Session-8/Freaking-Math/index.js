@@ -7,6 +7,7 @@ let correctSound = document.getElementById(`corect_sound`);
 let wrongSound = document.getElementById(`wrong_sound`);
 
 var miliSeconds = 5000;
+var miliSecondIntervalFunc;
 var randomQuestionIndex, score = 0;
 miliSecondInterval();
 
@@ -51,20 +52,20 @@ noBtn.addEventListener(`click`, onclickNoButtonCallback);
 
 function countDownFunc() {
     if (miliSeconds >= 0) {
-        barHead.style.width = `${(miliSeconds/5000 * 100)}%`;
         miliSeconds--;
+        barHead.style.width = `${(miliSeconds/5000 * 100)}%`;
         miliSecondInterval();
     } else {
-        console.log(`The time is up!`);
         resetCountingTime();
     }
 }
 
 function miliSecondInterval() {
-    setTimeout(countDownFunc, 1);
+    miliSecondIntervalFunc = setTimeout(countDownFunc, 1);
 }
 
 function resetCountingTime() {
+    clearTimeout(miliSecondIntervalFunc);
     miliSeconds = 5000;
     barHead.style.width = `${(miliSeconds/5000 * 100)}%`;
     miliSecondInterval();
