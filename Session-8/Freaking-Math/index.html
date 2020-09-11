@@ -6,55 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        #setting {
-            height: 70px;
-        }
-        
-        #freaking_math {
-            margin: auto;
-            width: 200px;
-            height: 250px;
-            text-align: center;
-            background: rgb(217, 226, 208);
-        }
-        
-        h2 {
-            position: relative;
-            text-align: center;
-            top: 40px;
-        }
-        
-        #bottom {
-            width: auto;
-            display: flex;
-            justify-content: center;
-            position: relative;
-            top: 100px;
-        }
-        
-        #no_button {
-            width: 50px;
-            display: block;
-            margin: 0px 20px 0px 0px;
-        }
-        
-        #yes_button {
-            width: 50px;
-            display: block;
-            margin: 0px 0px 0px 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div id="all">
-        <div id="setting">
 
+    <div id="all">
+        <audio id="corect_sound">
+            <source src="Powerup.wav" />
+        </audio>
+        <audio id="wrong_sound">
+            <source src="shoot1.wav" />
+        </audio>
+        <div id="setting">
+            <div id="setting_text">Setting</div>
+            <div id="setting_tick">
+                <div id="setting_tick_sound">Sound</div>
+                <p>&#10003;</p>
+                <div id="setting_tick_timer">Timer</div>
+                <p>&#10003;</p>
+            </div>
         </div>
         <div id="freaking_math">Freaking Math
-            <h2 id="question"> 1 + 1= 2 ? </h2>
-            <div id="bottom">
+            <div id="freaking_math_time_bar_bg">
+                <div id="freaking_math_time_bar_head"></div>
+            </div>
+            <div id="freaking_math_score">5</div>
+            <h2 id="freaking_math_question"> 1 + 1= 2 ? </h2>
+            <div id="freaking_math_bottom">
                 <input id="no_button" type="image" src="https://image.flaticon.com/icons/png/512/458/458594.png"></input>
                 <input id="yes_button" type="image" src="https://image.flaticon.com/icons/png/512/1008/1008917.png"></input>
             </div>

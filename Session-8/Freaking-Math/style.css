@@ -1,0 +1,82 @@
+body {
+    background: rgb(194, 196, 216);
+}
+
+#setting {
+    height: 70px;
+    width: 150px;
+    background: #e0d0c3;
+    position: relative;
+    left: 70%;
+}
+
+#setting_text {
+    width: 100%;
+    text-align: center;
+    background: rgb(218, 192, 174);
+}
+
+#setting_tick {
+    display: flex;
+}
+
+#setting_tick_sound {
+    margin: 10px;
+}
+
+#setting_tick_timer {
+    margin: 10px;
+}
+
+#freaking_math {
+    margin: auto;
+    width: 200px;
+    height: 250px;
+    text-align: center;
+    background: rgb(217, 226, 208);
+}
+
+#freaking_math_time_bar_head {
+    background: rgb(160, 255, 37);
+    height: 100%;
+    width: 50%;
+}
+
+#freaking_math_time_bar_bg {
+    position: relative;
+    height: 5px;
+    background: rgb(156, 128, 128);
+}
+
+#freaking_math_score {
+    text-align: center;
+    position: relative;
+    top: 5px;
+    left: 80px;
+}
+
+h2 {
+    position: relative;
+    text-align: center;
+    top: 30px;
+}
+
+#freaking_math_bottom {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 70px;
+}
+
+#no_button {
+    width: 50px;
+    display: block;
+    margin: 0px 20px 0px 0px;
+}
+
+#yes_button {
+    width: 50px;
+    display: block;
+    margin: 0px 0px 0px 20px;
+}
