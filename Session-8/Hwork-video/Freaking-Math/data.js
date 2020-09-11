@@ -19,7 +19,19 @@ const allQuestions = [{
         answer: false,
     },
     {
-        question: `0 x 100 = 0 ?`,
+        question: `1 x 1 = 1 ?`,
+        answer: true,
+    },
+    {
+        question: `4 + 5 = 12 ?`,
+        answer: false,
+    },
+    {
+        question: `9 - 11 = -3 ?`,
+        answer: false,
+    },
+    {
+        question: `6 - 13 = -7 ?`,
         answer: true,
     },
 ];
