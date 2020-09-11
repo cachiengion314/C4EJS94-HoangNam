@@ -1,4 +1,4 @@
-console.log(`2 - RUECD-read-update-event-create-delete`);
+console.log(`1 - RUECD-read-update-event-create-delete`);
 
 let ts_tbody = document.getElementById(`ts_tbody`);
 let allInputs = document.getElementsByTagName(`INPUT`);
