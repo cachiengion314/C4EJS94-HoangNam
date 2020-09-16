@@ -1,3 +1,7 @@
+body {
+    width: 1000px;
+}
+
 h1 {
     width: 100%;
     text-align: center;
@@ -41,10 +45,28 @@ h4 {
 
 .one_song {
     width: 25%;
+    height: 300px;
+    position: relative;
 }
 
 img {
     background: aqua;
-    width: 100px;
-    height: 100px;
+    width: 170px;
+    height: 170px;
+}
+
+.text {
+    width: 85%;
+}
+
+a {
+    font-size: 17px;
+    color: seagreen;
+    position: absolute;
+    bottom: 5px;
+    left: 16%;
+}
+
+a:hover {
+    color: red;
 }
