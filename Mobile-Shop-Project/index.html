@@ -2,142 +2,277 @@
 <html lang="en">
 
 <head>
-    <title>CSS Template</title>
+    <title>Mobile Shop Website</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-footer.css">
+    <link rel="stylesheet" href="style-side-navigation.css">
+    <link rel="stylesheet" href="style-UiList.css">
+    <link rel="stylesheet" href="style-sign-option.css">
+    <link rel="stylesheet" href="style-navigation-bar.css">
 </head>
 
 <body>
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <a href="#home_product_items_apple">Apple</a>
-        <a href="#home_product_items_samsung">Samsung</a>
-        <a href="#">Xiaomi</a>
+        <div id="side_bar">
+            <img src="https://image.flaticon.com/icons/png/512/630/630746.png" alt="">
+        </div>
         <a href="/Mobile-Shop-Project/index-2.html">About Us</a>
     </div>
-
+    <!-- black top start  -->
+    <div class="top"></div>
+    <!-- black top end  -->
+    <!-- main start -->
     <div id="main">
+        <!-- content start -->
         <div class="content">
-            <div class="content_title">
-                <div class="open_sidebar">
-                    <button class="openbtn" onclick="openNav()">☰</button>
-                </div>
-                <h2>Welcome to our Mobile Shope</h2>
-                <div class="sign_option">
-                    <!-- sign in -->
-                    <button id="sign_in_btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign
-                                in</button>
-                    <!-- sign up -->
-                    <button id="sign_out_btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign
+            <!-- head layout start  -->
+            <div class="content_head">
+                <div class="content_title">
+                    <div class="open_sidebar">
+                        <button class="openbtn" onclick="openNav()">☰</button>
+                    </div>
+                    <h2>Chào mừng đến với Mobile Shop</h2>
+                    <div id="content_title_bag">
+                        <img src="https://image.flaticon.com/icons/png/512/630/630746.png" alt="">
+                    </div>
+                    <div class="sign_option">
+                        <!-- sign in -->
+                        <button id="sign_in_btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign
+                        in</button>
+                        <!-- sign up -->
+                        <button id="sign_out_btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign
                         Up</button>
-                    <!-- sign arena -->
-                    <div id="id01" class="modal">
-                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                        <form class="modal-content" action="/action_page.php">
-                            <div class="container">
-                                <h1>Sign Up</h1>
-                                <p>Please fill in this form to create an account.</p>
-                                <hr>
-                                <label for="email"><b>Email</b></label>
-                                <input type="text" placeholder="Enter Email" name="email" required>
+                        <!-- modal sign arena start -->
+                        <div id="id01" class="modal">
+                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                            <form class="modal-content" action="/action_page.php">
+                                <div class="container">
+                                    <h1>Sign Up</h1>
+                                    <hr>
+                                    <label for="email"><b>Your User Name</b></label>
+                                    <input type="text" placeholder="Enter Name" name="email" required>
 
-                                <label for="psw"><b>Password</b></label>
-                                <input type="password" placeholder="Enter Password" name="psw" required>
+                                    <label for="psw"><b>Password</b></label>
+                                    <input type="password" placeholder="Enter Password" name="psw" required>
 
-                                <label for="psw-repeat"><b>Repeat Password</b></label>
-                                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                                    <label for="psw-repeat"><b>Repeat Password</b></label>
+                                    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
 
-                                <label>
+                                    <label>
                                     <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">
                                     Remember me
                                 </label>
-
-                                <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms &
-                                        Privacy</a>.</p>
-
-                                <div class="clearfix">
-                                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                                    <button type="submit" class="signupbtn">Sign Up</button>
+                                    <div class="clearfix">
+                                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                                        <button type="submit" class="signupbtn">Sign Up</button>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
+                        <!-- modal sign arena end -->
                     </div>
-
                 </div>
+                <!-- banner  start -->
+                <div class="header_banner">
+                    <img src="https://cdn.tgdd.vn/Files/2015/07/21/671534/tgdd-galaxy-j5-800-350.jpg" alt=""></img>
+                </div>
+                <!-- banner  end -->
+                <!-- navigation bar start -->
+                <div class="navbar">
+                    <div class="subnav">
+                        <button class="subnavbtn">Tat ca <i class="fa fa-caret-down"></i></button>
+                    </div>
+                    <div class="subnav">
+                        <button class="subnavbtn">Apple <i class="fa fa-caret-down"></i></button>
+                    </div>
+                    <div class="subnav">
+                        <button class="subnavbtn">Samsung <i class="fa fa-caret-down"></i></button>
+                    </div>
+                    <div class="subnav">
+                        <button class="subnavbtn">Xiami <i class="fa fa-caret-down"></i></button>
+                    </div>
+                    <div class="subnav">
+                        <button class="subnavbtn">Oppo <i class="fa fa-caret-down"></i></button>
+                    </div>
+                    <div class="subnav">
+                        <button class="subnavbtn">Nokia <i class="fa fa-caret-down"></i></button>
+                    </div>
+                </div>
+                <div style="padding:0 16px">
+                </div>
+                <!-- navigation bar end -->
+                <!-- Represent textContent start -->
+                <p>Điện thoại nổi bật</p>
+                <!-- Represent textContent end -->
             </div>
-
-            <!-- HEADER Layout -->
-            <div class="header">
-                <h2>Banner Here</h2>
-            </div>
-            <!-- Represent textContent -->
-            <p>All apple product we have.</p>
-            <!-- Start main product layout  -->
+            <!-- head layout end  -->
+            <!-- main product layout start  -->
             <ul id="home_product_items_apple" class="home_product_items">
+                <!-- item feature start  -->
                 <li class="home_product_items_feature">
-                    <img src="./images/iphone-11.jpg" alt="">
+                    <!-- left side start -->
+                    <div class="home_product_items_feature_left">
+                        <img src="./images/iphone-11.jpg" alt="">
+                        <div id="product_name" class="home_product_items_name">iphone 12 pro max</div>
+                        <!-- button and a link tag pair start -->
+                        <div class="home_product_items_add">
+                            <button>Them vao gio hang</button>
+                        </div>
+                        <div class="home_product_items_detail">
+                            <a href="">Chi tiet san pham</a>
+                        </div>
+                        <!-- button and a link tag pair end -->
+                    </div>
+                    <!-- left side end -->
+                    <!-- right side start  -->
+                    <div>
+                        <ul id="product_info" class="home_product_items_feature_right_list">
+                            <h4 id="product_info_title">Khuyen mai</h4>
+                            <li>Giảm giá 4,000,000đ qua quà tặng Galaxy</li>
+                            <li>Giảm giá 4,000,000đ qua quà tặng Galaxy</li>
+                            <li>Giảm giá 4,000,000đ qua quà tặng Galaxy</li>
+                        </ul>
+                        <h2 id="product_price_text">30.000.000 vnd</h2>
+                    </div>
+                    <!-- right side end  -->
                 </li>
-                <li class="home_product_items_normal">
-                    <img src="./images/iphone-11.jpg" alt="">
-                </li>
-                <li class="home_product_items_normal">
-                    <img src="./images/iphone-11.jpg" alt="">
-                </li>
-                <li class="home_product_items_normal">
-                    <img src="./images/iphone-11.jpg" alt="">
-                </li>
+                <!-- item feature end  -->
+                <!-- item feature start  -->
                 <li class="home_product_items_feature">
-                    <img src="./images/iphone-11.jpg" alt="">
+                    <!-- left side start -->
+                    <div class="home_product_items_feature_left">
+                        <img src="./images/iphone-11.jpg" alt="">
+                        <div class="home_product_items_name">iphone 12 pro max</div>
+                        <!-- button and a link tag pair start -->
+                        <div class="home_product_items_add">
+                            <button>Them vao gio hang</button>
+                        </div>
+                        <div class="home_product_items_detail">
+                            <a href="">Chi tiet san pham</a>
+                        </div>
+                        <!-- button and a link tag pair end -->
+                    </div>
+                    <!-- left side end -->
+                    <!-- right side start  -->
+                    <div>
+                        <ul id="product_info" class="home_product_items_feature_right_list">
+                            <h4 id="product_info_title">Khuyen mai</h4>
+                            <li>Giảm giá 4,000,000đ qua quà tặng Galaxy</li>
+                            <li>Giảm giá 4,000,000đ qua quà tặng Galaxy</li>
+                            <li>Giảm giá 4,000,000đ qua quà tặng Galaxy</li>
+                        </ul>
+                        <h2 id="product_price_text">30.000.000 vnd</h2>
+                    </div>
+                    <!-- right side end  -->
                 </li>
-                <li class="home_product_items_normal">
-                    <img src="./images/iphone-11.jpg" alt="">
+                <!-- item feature end  -->
+                <!-- item feature start  -->
+                <li class="home_product_items_feature">
+                    <!-- left side start -->
+                    <div class="home_product_items_feature_left">
+                        <img src="./images/iphone-11.jpg" alt="">
+                        <div class="home_product_items_name">iphone 12 pro max</div>
+                        <!-- button and a link tag pair start -->
+                        <div class="home_product_items_add">
+                            <button>Them vao gio hang</button>
+                        </div>
+                        <div class="home_product_items_detail">
+                            <a href="">Chi tiet san pham</a>
+                        </div>
+                        <!-- button and a link tag pair end -->
+                    </div>
+                    <!-- left side end -->
+                    <!-- right side start  -->
+                    <div>
+                        <ul id="product_info" class="home_product_items_feature_right_list">
+                            <h4 id="product_info_title">Khuyen mai</h4>
+                            <li>Giảm giá 4,000,000đ qua quà tặng Galaxy</li>
+                            <li>Giảm giá 4,000,000đ qua quà tặng Galaxy</li>
+                            <li>Giảm giá 4,000,000đ qua quà tặng Galaxy</li>
+                        </ul>
+                        <h2 id="product_price_text">30.000.000 vnd</h2>
+                    </div>
+                    <!-- right side end  -->
                 </li>
-                <li class="home_product_items_normal">
-                    <img src="./images/iphone-11.jpg" alt="">
+                <!-- item feature end  -->
+                <!-- item feature start  -->
+                <li class="home_product_items_feature">
+                    <!-- left side start -->
+                    <div class="home_product_items_feature_left">
+                        <img src="./images/iphone-11.jpg" alt="">
+                        <div class="home_product_items_name">iphone 12 pro max</div>
+                        <!-- button and a link tag pair start -->
+                        <div class="home_product_items_add">
+                            <button>Them vao gio hang</button>
+                        </div>
+                        <div class="home_product_items_detail">
+                            <a href="">Chi tiet san pham</a>
+                        </div>
+                        <!-- button and a link tag pair end -->
+                    </div>
+                    <!-- left side end -->
+                    <!-- right side start  -->
+                    <div>
+                        <ul id="product_info" class="home_product_items_feature_right_list">
+                            <h4 id="product_info_title">Khuyen mai</h4>
+                            <li>Giảm giá 4,000,000đ qua quà tặng Galaxy</li>
+                            <li>Giảm giá 4,000,000đ qua quà tặng Galaxy</li>
+                            <li>Giảm giá 4,000,000đ qua quà tặng Galaxy</li>
+                        </ul>
+                        <h2 id="product_price_text">30.000.000 vnd</h2>
+                    </div>
+                    <!-- right side end  -->
                 </li>
-                <li class="home_product_items_normal">
-                    <img src="./images/iphone-11.jpg" alt="">
+                <!-- item feature end  -->
+                <!-- item feature start  -->
+                <li class="home_product_items_feature">
+                    <!-- left side start -->
+                    <div class="home_product_items_feature_left">
+                        <img src="./images/iphone-11.jpg" alt="">
+                        <div class="home_product_items_name">iphone 12 pro max</div>
+                        <!-- button and a link tag pair start -->
+                        <div class="home_product_items_add">
+                            <button>Them vao gio hang</button>
+                        </div>
+                        <div class="home_product_items_detail">
+                            <a href="">Chi tiet san pham</a>
+                        </div>
+                        <!-- button and a link tag pair end -->
+                    </div>
+                    <!-- left side end -->
+                    <!-- right side start  -->
+                    <div>
+                        <ul id="product_info" class="home_product_items_feature_right_list">
+                            <h4 id="product_info_title">Khuyen mai</h4>
+                            <li>Giảm giá 4,000,000đ qua quà tặng Galaxy</li>
+                            <li>Giảm giá 4,000,000đ qua quà tặng Galaxy</li>
+                            <li>Giảm giá 4,000,000đ qua quà tặng Galaxy</li>
+                        </ul>
+                        <h2 id="product_price_text">30.000.000 vnd</h2>
+                    </div>
+                    <!-- right side end  -->
                 </li>
+                <!-- item feature end  -->
             </ul>
-            <!-- Represent textContent -->
-            <p>All samsung product we have.</p>
-            <ul id="home_product_items_samsung" class="home_product_items">
-                <li class="home_product_items_feature">
-                    <img src="./images/iphone-11.jpg" alt="">
-                </li>
-                <li class="home_product_items_normal">
-                    <img src="./images/iphone-11.jpg" alt="">
-                </li>
-                <li class="home_product_items_normal">
-                    <img src="./images/iphone-11.jpg" alt="">
-                </li>
-                <li class="home_product_items_normal">
-                    <img src="./images/iphone-11.jpg" alt="">
-                </li>
-                <li class="home_product_items_feature">
-                    <img src="./images/iphone-11.jpg" alt="">
-                </li>
-                <li class="home_product_items_normal">
-                    <img src="./images/iphone-11.jpg" alt="">
-                </li>
-                <li class="home_product_items_normal">
-                    <img src="./images/iphone-11.jpg" alt="">
-                </li>
-                <li class="home_product_items_normal">
-                    <img src="./images/iphone-11.jpg" alt="">
-                </li>
-            </ul>
-
-            <div id="about_us" class="footer">
-                <p>Contact Us</p>
+            <!-- main product layout end  -->
+            <!-- Represent textContent start -->
+            <div id="address">
+                <p>Cơ sở 1: Tầng 6, toà C, 22 Thành Công, Hà Nội</p>
+                <p>Cơ sở 1: Tầng 6, toà C, 22 Thành Công, Hà Nội</p>
+                <p>Cơ sở 1: Tầng 6, toà C, 22 Thành Công, Hà Nội</p>
+                <p>Kết Nối với Chúng Tôi</p>
             </div>
+            <!-- Represent textContent end -->
         </div>
-
-
+        <!-- content end -->
     </div>
-
-
+    <!-- main end -->
+    <!-- footer start  -->
+    <div class="footer"></div>
+    <!-- footer end  -->
     <script src="index.js"></script>
 </body>
 
