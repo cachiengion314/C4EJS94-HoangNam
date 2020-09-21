@@ -20,12 +20,6 @@
     outline: none;
 }
 
-.content_title h2 {
-    color: rgb(255, 217, 0);
-    width: 80%;
-    margin: 17px 0px 10px 20px;
-}
-
 .sidebar {
     height: 100%;
     width: 0;
@@ -39,12 +33,16 @@
     padding-top: 60px;
 }
 
-.sidebar #side_bar img {
+.sidebar #side_icon_img img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     height: 100px;
     width: 100px;
+}
+
+.sidebar #side_user_name {
+    text-align: center;
 }
 
 .sidebar a {

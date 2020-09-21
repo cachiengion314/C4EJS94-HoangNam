@@ -1,29 +1,17 @@
-let userDefault = {
-    name: `default`,
-    birth_of_date: `10-10-2000`,
-    phone_number: `0973155603`,
-    email: `userdefault@gmail.com`,
-    password: `123456789`,
-    admin: false,
-};
 let userAdmin = {
-    name: `admin`,
-    birth_of_date: `10-10-2000`,
-    phone_number: `0972145603`,
-    email: `cachiengion314@gmail.com`,
-    password: `123456789`,
+    user_name: `admin`,
+    password: `12345`,
+    product_choices: [],
+    admin: true,
+}
+let userDeafault = {
+    user_name: `default`,
+    password: `12345`,
+    product_choices: [],
     admin: false,
-};
-let userData = {
-    name: ``,
-    birth_of_date: ``,
-    phone_number: ``,
-    email: ``,
-    password: ``,
-    admin: false,
-};
+}
 
-let users = [userDefault, userAdmin];
+let users = [userAdmin, userDeafault];
 
 let mobileData = [{
         name: `iphone 11`,

@@ -1,9 +1,5 @@
 /* sign option plus */
 
-.sign_option {
-    width: 100px;
-}
-
 
 /* Full-width input fields */
 
@@ -29,16 +25,46 @@ input[type=password]:focus {
 
 /* Set a style for all buttons */
 
+#signed_name {
+    color: yellow;
+    width: 100%;
+    text-align: center;
+    padding-top: 5px;
+}
+
 #sign_in_btn {
     background-color: rgb(0, 0, 0);
+    border-radius: 15px;
     padding: 5px 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px !important;
+}
+
+#sign_up_btn {
+    background-color: rgb(0, 0, 0);
+    border-radius: 15px;
+    margin-top: 5px;
+    padding: 5px 10px;
+    margin-left: auto;
+    margin-right: auto;
     width: 100px !important;
 }
 
 #sign_out_btn {
     background-color: rgb(0, 0, 0);
-    padding: 5px 10px;
+    border-radius: 15px;
+    padding: 10px 17px;
+    margin-left: auto;
+    margin-right: auto;
     width: 100px !important;
+}
+
+#sign_in_btn:hover,
+#sign_up_btn:hover,
+#sign_out_btn:hover {
+    background-color: rgb(255, 230, 0);
+    color: black;
 }
 
 button {
@@ -49,11 +75,6 @@ button {
     border: none;
     cursor: pointer;
     width: 100%;
-    opacity: 0.9;
-}
-
-button:hover {
-    opacity: 1;
 }
 
 

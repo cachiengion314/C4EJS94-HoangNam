@@ -31,6 +31,13 @@ body {
     border-color: rgb(218, 219, 210);
 }
 
+.content_title h2 {
+    color: rgb(255, 217, 0);
+    display: block;
+    width: 85%;
+    margin: 17px 0px 10px 20px;
+}
+
 #content_title_bag {
     width: 60px;
     height: 60px;

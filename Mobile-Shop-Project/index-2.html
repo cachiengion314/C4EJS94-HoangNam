@@ -4,12 +4,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Đăng ký thông tin</title>
 </head>
 
 <body>
-    <p>This is about us section</p>
+    <!-- <h1 id="Đăng kí">Đăng kí thông tin người mua
+        <ul>
+            <li class="1">Họ và tên
+                <input type="text">
+            </li>
+            <li class="1">Số điện thoại
+                <input type="text">
+            </li>
+            <li class="1">Địa chỉ
+                <input type="text">
+            </li>
+            <li class="1">Chứng minh thư
+                <input type="text">
+            </li>
+            <li class="1"></li>
+        </ul>
+    </h1> -->
+    <form action="#">
+        <table>
+            <tr>
+                <td class="tdLabel"><label for="register_name" class="label">Họ và tên:</label></td>
+                <td><input type="text" name="name" value="" id="register_name" style="width:160px" /></td>
+            </tr>
+            <tr>
+                <td class="tdLabel"><label for="register_phone" class="label">Số điện thoại:</label></td>
+                <td><input type="text" name="phone" value="" id="register_phone" style="width:160px" /></td>
+            </tr>
+            <tr>
+                <td class="tdLabel"><label for="register_idCard" class="label">Chứng minh thư:</label></td>
+                <td><input type="text" name="idCard" value="" id="register_idCard" style="width:160px" /></td>
+            </tr>
+            <tr>
+                <td class="tdLabel"><label for="register_address" class="label">Địa chỉ:</label></td>
+                <td><input type="password" name="password" id="register_password" style="width:160px" /></td>
+            </tr>
+            <tr>
+                <td class="tdLabel"><label for="register_email" class="label">Email:</label></td>
+                <td><input type="email" name="email" value="" id="register_email" style="width:160px" /></td>
+            </tr>
+            <tr>
+                <td class="tdLabel"><label for="register_payments" class="label">Payments:</label></td>
+                <td>
+                    <input type="radio" name="Payments" id="register_installment" value="installment" />
+                    <label for="register_installment">Installment</label>
+                    <input type="radio" name="Payments" id="register_pay directly" value="pay directly" />
+                    <label for="register_pay directly">Pay Directly</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdLabel"><label for="register_model" class="label">Select Model:</label></td>
+                <td>
+                    <select name="model" id="register_model" style="width:160px">
+                <option value="ip">IP</option>
+                <option value="xiaomi">XiaoMi</option>
+                <option value="samsung">SamSung</option>
+                <option value="other">other</option>
+              </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div align="right"><input type="submit" id="register_0" value="register" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script src="index.js"></script>
 </body>
 
 </html>
