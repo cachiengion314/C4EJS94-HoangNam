@@ -1,8 +1,5 @@
 /* sign option plus */
 
-
-/* Full-width input fields */
-
 input[type=text],
 input[type=password] {
     width: 100%;
@@ -39,6 +36,7 @@ input[type=password]:focus {
     margin-left: auto;
     margin-right: auto;
     width: 100px !important;
+    transition: background-color .5s;
 }
 
 #sign_up_btn {
@@ -49,6 +47,7 @@ input[type=password]:focus {
     margin-left: auto;
     margin-right: auto;
     width: 100px !important;
+    transition: background-color .5s;
 }
 
 #sign_out_btn {
@@ -58,6 +57,7 @@ input[type=password]:focus {
     margin-left: auto;
     margin-right: auto;
     width: 100px !important;
+    transition: background-color .5s;
 }
 
 #sign_in_btn:hover,
@@ -75,27 +75,33 @@ button {
     border: none;
     cursor: pointer;
     width: 100%;
+    outline: none;
 }
 
+.cancel_button,
+.sign_button {
+    float: left;
+    width: 50%;
+    transition: background-color .5s;
+}
 
-/* Extra styles for the cancel button */
+.sign_button {
+    background-color: yellowgreen;
+}
 
-.cancelbtn {
+.cancel_button {
     padding: 14px 20px;
     background-color: #f44336;
 }
 
-
-/* Float cancel and signup buttons and add an equal width */
-
-.cancelbtn,
-.signupbtn {
-    float: left;
-    width: 50%;
+.sign_button:hover {
+    background-color: yellow;
+    color: black;
 }
 
-
-/* Add padding to container elements */
+.cancel_button:hover {
+    background-color: black;
+}
 
 .container {
     padding: 16px;
@@ -119,7 +125,7 @@ button {
     /* Full height */
     overflow: auto;
     /* Enable scroll if needed */
-    background-color: #474e5d;
+    background-color: #242529e0;
     padding-top: 50px;
 }
 
@@ -131,8 +137,8 @@ button {
     margin: 5% auto 15% auto;
     /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
-    width: 80%;
-    /* Could be more or less, depending on screen size */
+    width: 45%;
+    border-radius: 15px;
 }
 
 
@@ -141,24 +147,6 @@ button {
 hr {
     border: 1px solid #f1f1f1;
     margin-bottom: 25px;
-}
-
-
-/* The Close Button (x) */
-
-.close {
-    position: absolute;
-    right: 35px;
-    top: 15px;
-    font-size: 40px;
-    font-weight: bold;
-    color: #f1f1f1;
-}
-
-.close:hover,
-.close:focus {
-    color: #f44336;
-    cursor: pointer;
 }
 
 
@@ -174,8 +162,8 @@ hr {
 /* Change styles for cancel button and signup button on extra small screens */
 
 @media screen and (max-width: 300px) {
-    .cancelbtn,
-    .signupbtn {
+    .cancel_button,
+    .sign_button {
         width: 100%;
     }
 }

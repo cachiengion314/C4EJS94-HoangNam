@@ -1,5 +1,26 @@
-// Sidebar Section
+let sadImageUrl = `./images/sad.png`;
+let successImageUrl = `./images/success.png`;
+let cartImageUrl = `./images/cart.png`;
+let questionImageUrl = `./images/question_mark.png`;
 
+// scroll to top button section
+mybutton = document.getElementById("to_the_top_button");
+window.onscroll = scrollCallback;
+
+function scrollCallback() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
+
+function toTheTop() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+// Sidebar Section
 function openNav() {
     document.getElementById("mySidebar").style.width = "180px";
     document.getElementById("main").style.marginLeft = "115px";
@@ -9,11 +30,75 @@ function closeNav() {
     document.getElementById("mySidebar").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
 }
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modalSignUp) {
+        modalSignUp.style.display = "none";
+    } else if (event.target == modalSignIn) {
+        modalSignIn.style.display = "none";
+    }
+}
+
+// display banner section
+let imgSlides = document.getElementsByClassName(`img_slides`);
+let indicateDots = document.getElementsByClassName(`indicate_dot`);
+let directions = document.getElementsByClassName(`direction`);
+let indexOfBanner = 0;
+
+for (let i = 0; i < indicateDots.length; i++) {
+    indicateDots[i].onclick = () => {
+        indexOfBanner = showSlideBannerAt(i);
+    }
+}
+for (let i = 0; i < directions.length; i++) {
+    directions[i].onclick = () => {
+        if (i == 0) {
+            indexOfBanner--;
+        } else {
+            indexOfBanner++;
+        }
+        indexOfBanner = showSlideBannerAt(indexOfBanner);
+    }
+}
+
+function showSlideBannerAuto() {
+    setTimeout(() => {
+        indexOfBanner++;
+        indexOfBanner = showSlideBannerAt(indexOfBanner);
+        showSlideBannerAuto();
+    }, 3000);
+}
+
+function showSlideBannerAt(index) {
+    if (index > imgSlides.length - 1) {
+        index = 0;
+    } else if (index < 0) {
+        index = imgSlides.length - 1;
+    }
+    for (let i = 0; i < imgSlides.length; i++) {
+        imgSlides[i].style.display = `none`;
+    }
+    for (let i = 0; i < indicateDots.length; i++) {
+        indicateDots[i].className = indicateDots[i].className.replace(` turquoise`, ``);
+    }
+    indicateDots[index].className += ` turquoise`;
+    imgSlides[index].style.display = `block`;
+    return index;
+}
+
+// welcome title section
+let welcomeTitle = document.getElementById(`welcome_title`);
+let mainPageUrl = `index.html`;
+
+welcomeTitle.onclick = () => {
+    location.href = mainPageUrl;
+}
 
 // Sign up / sign in section
 let keySignInRemeberCheckBox = `sign_remember_check`;
 let keyCurrentUserSignIn = `current_user_sign_in`;
 let keyUsersLocalStorage = `users_data`;
+
 let modalSignUp = document.getElementById('id01');
 let modalSignIn = document.getElementById(`id02`);
 let nameInput = document.getElementById(`sign_up_name_input`);
@@ -28,7 +113,6 @@ let modalPasswordInput = document.getElementById(`sign_in_password_input`);
 let modalSignInStatusTitle = document.getElementById(`sign_in_status_title`);
 let signOutBtn = document.getElementById(`sign_out_btn`);
 let sideName = document.getElementById(`side_user_name`);
-let welcomeTitle = document.getElementById(`welcome_title`);
 let signInRemeberCheckBox = document.getElementById(`sign_in_remember_checkbox`);
 let signUpRemeberCheckBox = document.getElementById(`sign_up_remember_checkbox`);
 let modalSignUpStatusTitle = document.getElementById(`sign_up_status_title`);
@@ -103,6 +187,7 @@ function signIn(index) {
     sideName.textContent = usersArr[index].user_name;
     isNewAcc = false;
     setUserSignInIndex(index);
+    showCurrentUserRedDotBag();
     console.log(usersArr);
 }
 
@@ -111,15 +196,23 @@ function signOut() {
     signUpBtn.style.display = `block`;
     signOutBtn.style.display = `none`;
     sideName.textContent = `no name`;
-    welcomeTitle.textContent = `Chào mừng bạn đến với Mobile Shop`;
+    welcomeTitle.textContent = `Chào mừng đến với Mobile Shop. Xin bạn vui lòng đăng nhập`;
     setUserSignInIndex(-1);
+    showCurrentUserRedDotBag();
+}
+
+function closeNavigationWhenClickSignOut() {
+    closeNav();
 }
 
 signOutBtn.addEventListener(`click`, signOut);
+signOutBtn.addEventListener(`click`, closeNavigationWhenClickSignOut);
 
 function modalSignUpOnclickCallback() {
-    if (passwordInput.value != repeatPasswordInput.value) {
-        modalSignUpStatusTitle.textContent = `Wrong repeat password! Please type again!`;
+    if (passwordInput.value != repeatPasswordInput.value ||
+        nameInput.value == `` || passwordInput.value == `` || repeatPasswordInput.value == `` ||
+        nameInput.value == null) {
+        modalSignUpStatusTitle.textContent = `Sai thông tin! Vui lòng nhập lại!`;
         modalSignUpStatusTitle.style.color = `red`;
         passwordInput.value = null;
         repeatPasswordInput.value = null;
@@ -129,7 +222,6 @@ function modalSignUpOnclickCallback() {
         user_name: nameInput.value,
         password: repeatPasswordInput.value,
         product_choices: [],
-        amin: false,
     }
     let rawData = localStorage.getItem(keyUsersLocalStorage);
     let usersArray = JSON.parse(rawData);
@@ -140,6 +232,7 @@ function modalSignUpOnclickCallback() {
     passwordInput.value = null;
     repeatPasswordInput.value = null;
     modalSignUp.style.display = `none`;
+    closeNav();
 }
 modalSignUpBtn.addEventListener(`click`, modalSignUpOnclickCallback);
 
@@ -151,7 +244,7 @@ function compareStringIgnoreCase(str_1, str_2) {
 }
 
 function signInOnClickCallback() {
-    modalSignInStatusTitle.textContent = `Please type a properly info`;
+    modalSignInStatusTitle.textContent = `Đăng nhập thành viên trang web`;
     modalSignInStatusTitle.style.color = `black`;
     signInRemeberCheckBox.checked = getSignRemeberCheck();
 }
@@ -159,11 +252,17 @@ function signInOnClickCallback() {
 signInBtn.addEventListener(`click`, signInOnClickCallback);
 
 function signUpOnclickCallback() {
-    modalSignUpStatusTitle.textContent = `Please type a properly info`;
+    modalSignUpStatusTitle.textContent = `Đăng ký thành viên trang web`;
     modalSignUpStatusTitle.style.color = `black`;
     signUpRemeberCheckBox.checked = getSignRemeberCheck();
 }
-
+signUpBtn.onclick = () => {
+    if (getUsersArray().length > 5) {
+        notificationPopUp(`Bạn không thể đăng ký quá 5 tài khoản`, sadImageUrl);
+    } else {
+        document.getElementById('id01').style.display = 'block';
+    }
+}
 signUpBtn.addEventListener(`click`, signUpOnclickCallback);
 
 function modalSignInOnclickCallback() {
@@ -181,8 +280,9 @@ function modalSignInOnclickCallback() {
         modalNameInput.value = null;
         modalPasswordInput.value = null;
         modalSignIn.style.display = `none`;
+        closeNav();
     } else {
-        modalSignInStatusTitle.textContent = `Wrong info! please type again`;
+        modalSignInStatusTitle.textContent = `Thông tin sai! Vui lòng điền lại`;
         modalSignInStatusTitle.style.color = `red`;
         modalNameInput.value = null;
         modalPasswordInput.value = null;
@@ -190,15 +290,6 @@ function modalSignInOnclickCallback() {
 }
 
 modalSignInBtn.addEventListener(`click`, modalSignInOnclickCallback);
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modalSignUp) {
-        modalSignUp.style.display = "none";
-    } else if (event.target == modalSignIn) {
-        modalSignIn.style.display = "none";
-    }
-}
 
 signInRemeberCheckBox.addEventListener(`change`, () => {
     if (signInRemeberCheckBox.checked) {
@@ -215,20 +306,3 @@ signUpRemeberCheckBox.addEventListener(`change`, () => {
         setSignRemeberCheck(-1);
     }
 });
-
-window.onload = () => {
-    saveUsersDataForTheFirstTime();
-    checkUserSignStatus();
-}
-
-// Add to cart section
-let addToCartBtnArr = document.getElementsByClassName(`add_to_cart_btn`);
-let modalAddToCartSuccess = document.getElementById(`add_to_cart_success`);
-for (i = 0; i < addToCartBtnArr.length; i++) {
-    addToCartBtnArr[i].addEventListener(`click`, () => {
-        modalAddToCartSuccess.style.display = `block`;
-        setTimeout(() => {
-            modalAddToCartSuccess.style.display = `none`;
-        }, 500);
-    })
-}

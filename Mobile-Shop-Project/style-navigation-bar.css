@@ -1,19 +1,10 @@
-/* navigation bar section plus */
+/* navigation bar section */
 
 .navbar {
     overflow: hidden;
     background-color: rgb(0, 0, 0);
     border-style: solid;
-    border-color: rgb(218, 219, 210);
-}
-
-.navbar a {
-    float: left;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+    border-color: rgb(238, 238, 238);
 }
 
 .subnav {
@@ -31,10 +22,71 @@
     font-family: inherit;
     margin: 0;
     width: 150px;
+    transition: background-color .5s;
 }
 
-.navbar a:hover,
-.subnav:hover .subnavbtn {
+.subnav .subnavbtn:hover {
     background-color: rgb(255, 217, 0);
-    color: rgb(0, 0, 0);
+    color: black;
+}
+
+
+/* search section  */
+
+.navbar .search_container {
+    float: right;
+}
+
+.search_container {
+    display: flex;
+}
+
+.navbar input[type=text] {
+    padding: 6px;
+    font-size: 17px;
+    border: none;
+    margin: 8px 0px 0px 0px;
+}
+
+.navbar input[type=text]:focus {
+    background: white;
+}
+
+.navbar .search_container button {
+    outline: none;
+    padding: 6px 10px;
+    margin: 8px 16px 0px 0px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+}
+
+.navbar .search_container button img {
+    width: 100%;
+    display: block;
+}
+
+.navbar .search_container button:hover {
+    background: #aaa;
+}
+
+@media screen and (max-width: 600px) {
+    .navbar .search_container {
+        float: none;
+    }
+    .navbar a,
+    .navbar input[type=text],
+    .navbar .search_container button {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+    .navbar input[type=text] {
+        border: 1px solid #ccc;
+    }
 }

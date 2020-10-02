@@ -39,6 +39,12 @@
     margin-right: auto;
     height: 100px;
     width: 100px;
+    cursor: pointer;
+    transition: filter .5s;
+}
+
+.sidebar #side_icon_img img:hover {
+    filter: hue-rotate(180deg);
 }
 
 .sidebar #side_user_name {
