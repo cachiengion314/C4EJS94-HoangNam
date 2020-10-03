@@ -1,9 +1,3 @@
-let sadImageUrl = `./images/sad.png`;
-let successImageUrl = `./images/success.png`;
-let cartImageUrl = `./images/cart.png`;
-let questionImageUrl = `./images/question_mark.png`;
-let sandClockImageUrl = `./images/sand_clock.png`;
-
 // scroll to top button section
 mybutton = document.getElementById("to_the_top_button");
 window.onscroll = scrollCallback;

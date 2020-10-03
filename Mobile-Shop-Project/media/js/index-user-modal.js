@@ -14,7 +14,7 @@ function loadUserStatus() {
         <div class="space"></div>
         <div class="modal_user_block">
             <div class="user">
-                <img id="modal_user_bagImg" src="./images/avatar_2.png" alt="">
+                <img id="modal_user_bagImg" src=${avatar2ImageUrl} alt="">
                 <div class="user_name">${users[i].user_name}</div>
             </div>
             <div class="user_password">${users[i].password}</div>

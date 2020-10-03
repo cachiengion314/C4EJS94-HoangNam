@@ -1,3 +1,10 @@
+let sadImageUrl = `media/images/sad.png`;
+let successImageUrl = `media/images/success.png`;
+let cartImageUrl = `media/images/cart.png`;
+let questionImageUrl = `media/images/question_mark.png`;
+let sandClockImageUrl = `media/images/sand_clock.png`;
+let avatar2ImageUrl = `media/images/avatar_2.png`;
+
 let userAdmin = {
     user_name: `admin`,
     password: `12345`,
@@ -9,7 +16,7 @@ let users = [userAdmin, ];
 
 let mobilesData = [{
         name: `iphone 11`,
-        imageUrl: `"./images/iphone-11-red.jpg"`,
+        imageUrl: `"media/images/iphone-11-red.jpg"`,
         release_year: 2019,
         brand: `apple`,
         price: `21.990.000 vnd`,
@@ -29,7 +36,7 @@ let mobilesData = [{
         }
     }, {
         name: `Xiaomi Redmi 9`,
-        imageUrl: `"./images/xiaomi-redmi-9.jpg"`,
+        imageUrl: `"media/images/xiaomi-redmi-9.jpg"`,
         release_year: 2019,
         brand: `xiaomi`,
         price: `3.590.000 vnd`,
@@ -50,7 +57,7 @@ let mobilesData = [{
     },
     {
         name: `POCO X3 NFC`,
-        imageUrl: `"./images/xiaomi-poco-x3-nfc.jpg"`,
+        imageUrl: `"media/images/xiaomi-poco-x3-nfc.jpg"`,
         release_year: 2020,
         brand: `xiaomi`,
         price: `5.390.000 vnd`,
@@ -71,7 +78,7 @@ let mobilesData = [{
     },
     {
         name: `Galaxy A21s`,
-        imageUrl: `"./images/samsung-galaxy-a21s.jpg"`,
+        imageUrl: `"media/images/samsung-galaxy-a21s.jpg"`,
         release_year: 2019,
         brand: `samsung`,
         price: `3.190.000 vnd`,
@@ -92,7 +99,7 @@ let mobilesData = [{
     },
     {
         name: `Galaxy Note 20 Ultra`,
-        imageUrl: `"./images/samsung-galaxy-note-20-ultra.jpg"`,
+        imageUrl: `"media/images/samsung-galaxy-note-20-ultra.jpg"`,
         release_year: 2019,
         brand: `samsung`,
         price: `29.990.000 vnd`,
@@ -113,7 +120,7 @@ let mobilesData = [{
     },
     {
         name: `iPhone 11 Pro Max`,
-        imageUrl: `"./images/iphone-11-pro-max.jpg"`,
+        imageUrl: `"media/images/iphone-11-pro-max.jpg"`,
         release_year: 2019,
         brand: `apple`,
         price: `41.990.000 vnd`,
@@ -134,7 +141,7 @@ let mobilesData = [{
     },
     {
         name: `Galaxy Z Flip`,
-        imageUrl: `"./images/samsung-galaxy-z-flip.jpg"`,
+        imageUrl: `"media/images/samsung-galaxy-z-flip.jpg"`,
         release_year: 2019,
         brand: `samsung`,
         price: `36.000.000 vnd`,
@@ -155,7 +162,7 @@ let mobilesData = [{
     },
     {
         name: `Galaxy S20+`,
-        imageUrl: `"./images/samsung-galaxy-s20-plus.jpg"`,
+        imageUrl: `"./media/images/samsung-galaxy-s20-plus.jpg"`,
         release_year: 2019,
         brand: `samsung`,
         price: `16.990.000 vnd`,
@@ -176,7 +183,7 @@ let mobilesData = [{
     },
     {
         name: `iPhone SE 2020`,
-        imageUrl: `"./images/iphone-se-2020-red.jpg"`,
+        imageUrl: `"./media/images/iphone-se-2020-red.jpg"`,
         release_year: 2020,
         brand: `apple`,
         price: `12.990.000 vnd`,
@@ -197,7 +204,7 @@ let mobilesData = [{
     },
     {
         name: `iPhone 7 plus`,
-        imageUrl: `"./images/iphone-7-plus-32gb-gold.jpg"`,
+        imageUrl: `"./media/images/iphone-7-plus-32gb-gold.jpg"`,
         release_year: 2016,
         brand: `apple`,
         price: `11.490.000 vnd`,
@@ -218,7 +225,7 @@ let mobilesData = [{
     },
     {
         name: `Galaxy Note 10 Lite`,
-        imageUrl: `"./images/samsung-galaxy-note-10-lite.jpg"`,
+        imageUrl: `"./media/images/samsung-galaxy-note-10-lite.jpg"`,
         release_year: 2019,
         brand: `samsung`,
         price: `11.490.000 vnd`,
@@ -239,7 +246,7 @@ let mobilesData = [{
     },
     {
         name: `Xiaomi Redmi Note 9S`,
-        imageUrl: `"./images/xiaomi-redmi-note-9s.jpg"`,
+        imageUrl: `"./media/images/xiaomi-redmi-note-9s.jpg"`,
         release_year: 2019,
         brand: `xiaomi`,
         price: `5.990.000 vnd`,
@@ -260,7 +267,7 @@ let mobilesData = [{
     },
     {
         name: `Xiaomi Redmi 9C`,
-        imageUrl: `"./images/xiaomi-redmi-9c.jpg"`,
+        imageUrl: `"./media/images/xiaomi-redmi-9c.jpg"`,
         release_year: 2019,
         brand: `xiaomi`,
         price: `2.990.000 vnd`,
@@ -281,7 +288,7 @@ let mobilesData = [{
     },
     {
         name: `Xiaomi Redmi 9A`,
-        imageUrl: `"./images/xiaomi-redmi-9a-grey.jpg"`,
+        imageUrl: `"./media/images/xiaomi-redmi-9a-grey.jpg"`,
         release_year: 2019,
         brand: `xiaomi`,
         price: `1.990.000 vnd`,
@@ -302,7 +309,7 @@ let mobilesData = [{
     },
     {
         name: `Xiaomi Redmi 8A`,
-        imageUrl: `"./images/xiaomi-redmi-8A.jpg"`,
+        imageUrl: `"./media/images/xiaomi-redmi-8A.jpg"`,
         release_year: 2019,
         brand: `xiaomi`,
         price: `2.290.000 vnd`,
@@ -323,7 +330,7 @@ let mobilesData = [{
     },
     {
         name: `Galaxy A70`,
-        imageUrl: `"./images/samsung-galaxy-a70.jpg"`,
+        imageUrl: `"./media/images/samsung-galaxy-a70.jpg"`,
         release_year: 2020,
         brand: `samsung`,
         price: `9.290.000 vnd`,
@@ -344,7 +351,7 @@ let mobilesData = [{
     },
     {
         name: `Galaxy A01`,
-        imageUrl: `"./images/samsung-galaxy-a01.jpg"`,
+        imageUrl: `"./media/images/samsung-galaxy-a01.jpg"`,
         release_year: 2020,
         brand: `samsung`,
         price: `2.790.000 vnd`,
@@ -365,7 +372,7 @@ let mobilesData = [{
     },
     {
         name: `iPhone 7`,
-        imageUrl: `"./images/iphone-7.jpg"`,
+        imageUrl: `"./media/images/iphone-7.jpg"`,
         release_year: 2016,
         brand: `apple`,
         price: `8.990.000 vnd`,
@@ -386,7 +393,7 @@ let mobilesData = [{
     },
     {
         name: `iPhone Xs`,
-        imageUrl: `"./images/iphone-xs-gold.jpg"`,
+        imageUrl: `"./media/images/iphone-xs-gold.jpg"`,
         release_year: 2018,
         brand: `apple`,
         price: `19.990.000 vnd`,
@@ -407,7 +414,7 @@ let mobilesData = [{
     },
     {
         name: `Galaxy A31`,
-        imageUrl: `"./images/samsung-galaxy-a31.jpg"`,
+        imageUrl: `"./media/images/samsung-galaxy-a31.jpg"`,
         release_year: 2020,
         brand: `samsung`,
         price: `6.490.000 vnd`,
@@ -428,7 +435,7 @@ let mobilesData = [{
     },
     {
         name: `Galaxy A20s`,
-        imageUrl: `"./images/samsung-galaxy-a20s.jpg"`,
+        imageUrl: `"./media/images/samsung-galaxy-a20s.jpg"`,
         release_year: 2020,
         brand: `samsung`,
         price: `5.390.000 vnd`,
