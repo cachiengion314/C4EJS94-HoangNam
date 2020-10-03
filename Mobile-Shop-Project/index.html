@@ -5,26 +5,27 @@
     <title>Mobile Shop Website</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style-footer.css">
-    <link rel="stylesheet" href="style-side-navigation.css">
-    <link rel="stylesheet" href="style-UiList.css">
-    <link rel="stylesheet" href="style-sign-option.css">
-    <link rel="stylesheet" href="style-navigation-bar.css">
-    <link rel="stylesheet" href="style-add-cart-modal.css">
-    <link rel="stylesheet" href="style-user-modal.css">
+    <link rel="stylesheet" href="./media/css/style.css">
+    <link rel="stylesheet" href="./media/css/style-footer.css">
+    <link rel="stylesheet" href="./media/css/style-side-navigation.css">
+    <link rel="stylesheet" href="./media/css/style-UiList.css">
+    <link rel="stylesheet" href="./media/css/style-sign-option.css">
+    <link rel="stylesheet" href="./media/css/style-navigation-bar.css">
+    <link rel="stylesheet" href="./media/css/style-add-cart-modal.css">
+    <link rel="stylesheet" href="./media/css/style-user-modal.css">
 </head>
 
 <body>
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <div id="side_icon_img">
-            <img src="./images/avatar_1.png" alt="">
+            <img src="./media/images/avatar_1.png" alt="">
         </div>
         <p id="side_user_name">User Default Name</p>
         <button id="sign_out_btn">Đăng Xuất</button>
-        <button id="sign_in_btn" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Đăng Nhập</button>
-        <button id="sign_up_btn" style="width:auto;">Đăng Ký</button>
+        <button id="sign_in_btn" onclick="document.getElementById('id02').style.display='block'">Đăng Nhập</button>
+        <button id="sign_up_btn">Đăng Ký</button>
+        <button id="history_btn">Lịch sử</button>
 
         <!-- modal sign in arena start -->
         <div id="id02" class="modal">
@@ -80,7 +81,7 @@
         <!-- modal sign in arena end -->
 
         <!-- modal user arena start -->
-        <div id="modal_user" class="modal">
+        <div id="modal_user" class="modal_user">
             <div id="modal_container_user" class="container_user">
                 <h3 id="modal_user_title">Toàn bộ user đã đăng ký</h3>
                 <div class="slice_bar"></div>
@@ -88,16 +89,38 @@
                     <div class="account">Tên tài khoản</div>
                     <div class="password">Password</div>
                     <div class="product_choices">Đã lựa chọn sản phẩm</div>
-                    <div class="delete">Xoá Tài Khoản</div>
+                    <div class="option">Tùy chọn</div>
                 </div>
                 <div id="modal_user_block_info">
 
-
                 </div>
-                <button id="modal_user_ok_button">OK</button>
+                <button id="modal_user_ok_button" onclick="document.getElementById(`modal_user`).style.display=`none`">OK</button>
             </div>
         </div>
         <!-- modal user arena end -->
+
+        <!-- modal order history start -->
+        <div id="modal_order_history" class="modal_order_history">
+            <div id="modal_container_order" class="container_order">
+                <h3 id="modal_order_title">Lịch sử các đơn hàng gần nhất</h3>
+                <div class="slice_bar"></div>
+                <div class="modal_order_block_catgory">
+                    <div class="id_number">Id</div>
+                    <div class="account_name">Tên tài khoản</div>
+                    <div class="address">Địa chỉ</div>
+                    <div class="pay_form">Kiểu thanh toán</div>
+                    <div class="telephone">Telephone</div>
+                    <div class="total_paid">Tổng tiền</div>
+                    <div class="product_choices">Các sản phẩm</div>
+                    <div class="order_date">Date</div>
+                </div>
+                <div id="modal_order_block_root">
+
+                </div>
+                <button id="modal_order_ok_button" onclick="document.getElementById(`modal_order_history`).style.display=`none`">OK</button>
+            </div>
+        </div>
+        <!-- modal order history end -->
     </div>
 
     <!-- main start -->
@@ -112,7 +135,7 @@
                     </div>
                     <h2 id="welcome_title">Chào mừng đến với Mobile Shop</h2>
                     <div id="content_title_bag">
-                        <img src="./images/cart.png" alt="">
+                        <img src="./media/images/cart.png" alt="">
                         <span id="bag_red_dot" class="all_red_dot">0</span>
                     </div>
                     <!-- modal cart arena start -->
@@ -155,11 +178,11 @@
                             <div class="slice_bar"></div>
                             <div class="pay_form_block">
                                 <div class="pay_form_address">Địa điểm giao hàng</div>
-                                <input class="pay_form_input" type="text" onfocus="this.value=``" value="Vd: Số 115 Nguyễn Lương Bằng, Đống Đa, Hà Nội">
+                                <input id="address_input" class="pay_form_input" type="text" onfocus="this.value=``" value="Vd: Số 115 Nguyễn Lương Bằng, Đống Đa, Hà Nội">
                                 <div class="pay_phone_money_block">
                                     <div class="phone_pair">
                                         <div class="telephone_title">Số điện thoại liên hệ</div>
-                                        <input type="tel" onfocus="this.value=``" value="Vd: 097325603">
+                                        <input id="telephone_input" type="tel" onfocus="this.value=``" value="Vd: 097325603">
                                     </div>
                                     <div class="money_pair">
                                         <div class="money_type_title">Hình thức chuyển tiền</div>
@@ -180,9 +203,9 @@
                 </div>
                 <!-- banner  start -->
                 <div class="header_banner">
-                    <img class="img_slides animate-left" src="./images/TGDd-KhaiTruongHN-ver2-940-300.jpg" alt=""></img>
-                    <img class="img_slides animate-top" src="./images/tgdd-tragopoppo-800-300.jpg" alt=""></img>
-                    <img class="img_slides animate-right" src="./images/940-300.jpg" alt=""></img>
+                    <img class="img_slides animate-left" src="./media/images/TGDd-KhaiTruongHN-ver2-940-300.jpg" alt=""></img>
+                    <img class="img_slides animate-top" src="./media/images/tgdd-tragopoppo-800-300.jpg" alt=""></img>
+                    <img class="img_slides animate-right" src="./media/images/940-300.jpg" alt=""></img>
 
                     <div id="left_direction" class="direction">&#10094;</div>
                     <div id="right_direction" class="direction">&#10095;</div>
@@ -208,7 +231,7 @@
                     <div class="search_container">
                         <input id="search_input" class="navbar_search" type="text" placeholder="Tìm kiếm...">
                         <button id="search_button" type="submit">
-                            <img src="./images/search_flat_icon.png" alt="">
+                            <img src="./media/images/search_flat_icon.png" alt="">
                         </button>
                     </div>
                 </div>
@@ -221,7 +244,7 @@
                 <div class="container">
                     <h1 id="modal_add_success_title">Đã thêm thành công vào giỏ hàng</h1>
                     <img id="modal_add_success_bagImg" src="./images/success.png" alt="">
-                    <button onclick="document.getElementById(`add_to_cart_success`).style.display=`none`">OK</button>
+                    <button id="modal_ok_button" onclick="document.getElementById(`add_to_cart_success`).style.display=`none`">OK</button>
                 </div>
             </div>
             <!-- modal add to cart arena success end -->
@@ -232,7 +255,7 @@
             <!-- all brand end  -->
 
             <!-- scroll to top button start -->
-            <button onclick="toTheTop()" id="to_the_top_button" title="Go to top">Top</button>
+            <button onclick="toTheTop()" id="to_the_top_button" title="Go to top">&#9650;</button>
             <!-- scroll to top button end -->
 
             <!-- Represent bottom textContent start -->
@@ -251,10 +274,10 @@
     <!-- footer start  -->
     <div class="footer"></div>
     <!-- footer end  -->
-    <script src="data.js"></script>
-    <script src="index.js"></script>
-    <script src="index-phone-list.js"></script>
-    <script src="index-user-modal.js"></script>
+    <script src="./media/js/data.js"></script>
+    <script src="./media/js/index.js"></script>
+    <script src="./media/js/index-phone-list.js"></script>
+    <script src="./media/js/index-user-modal.js"></script>
     <script>
         window.onload = () => {
             saveUsersDataForTheFirstTime();

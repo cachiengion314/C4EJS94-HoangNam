@@ -2,7 +2,6 @@
 let userModal = document.getElementById(`modal_user`);
 let sideIcon = document.getElementById(`side_icon_img`);
 let userBlockInfo = document.getElementById(`modal_user_block_info`);
-let containerUser = document.getElementById(`modal_container_user`);
 
 function loadUserStatus() {
     let users = getUsersArray();
@@ -22,7 +21,8 @@ function loadUserStatus() {
             <div id="products_choices_${i}" class="products_choices">
                
             </div>
-            <div class="delete_account">
+            <div class="option_button">
+                <button id="history_button_${i}" class="history_button">Xem</button>
                 <button id="delete_button_${i}" class="delete_button">Xoá</button>
             </div>
         </div>
@@ -37,7 +37,7 @@ function loadUserStatus() {
             }
         } else {
             document.getElementById(`products_choices_${i}`).insertAdjacentHTML(`beforeend`, `
-                Đã mua hoặc chưa chọn sản phẩm nào
+              Chưa chọn sản phẩm nào
             `);
         }
         document.getElementById(`delete_button_${i}`).onclick = () => {
@@ -48,10 +48,10 @@ function loadUserStatus() {
                 notificationPopUp(`Bạn không có quyền xoá admin`, sadImageUrl);
             }
         }
+        document.getElementById(`history_button_${i}`).onclick = () => {
+            loadOrderHistory(i);
+        }
     }
-    document.getElementById(`modal_user_ok_button`).onclick = () => {
-        userModal.style.display = `none`;
-    };
 }
 
 function openUserModal() {
@@ -63,3 +63,37 @@ function openUserModal() {
 
 }
 sideIcon.onclick = openUserModal;
+
+// order history section
+
+function loadOrderHistory(indexOfUser) {
+    document.getElementById(`modal_order_history`).style.display = `block`;
+    let thisOrderHistorys = getUsersArray()[indexOfUser].order_historys;
+    document.getElementById(`modal_order_block_root`).innerHTML = ``;
+    let index = 0;
+    if (thisOrderHistorys.length > 5) {
+        index = thisOrderHistorys.length - 5;
+    }
+    for (let i = index; i < thisOrderHistorys.length; i++) {
+        document.getElementById(`modal_order_block_root`).insertAdjacentHTML(`beforeend`, `
+        <!-- one order start -->
+        <div class="slice_bar"></div>
+        <div class="space"></div>
+        <div id="modal_order_block_info" class="modal_order_block_info">
+            <div class="id_number font_size_15">${i}</div>
+            <div class="account_name font_size_15">${thisOrderHistorys[i].user_name}</div>
+            <div class="address font_size_15">${thisOrderHistorys[i].address}</div>
+            <div class="pay_form font_size_15">${thisOrderHistorys[i].payForm}</div>
+            <div class="telephone font_size_15">${thisOrderHistorys[i].telephone_number}</div>
+            <div class="total_paid font_size_15">${(thisOrderHistorys[i].total_paid/1000).toLocaleString()}, 000 vnd</div>
+            <div class="product_choices font_size_15">${thisOrderHistorys[i].product_choices}</div>
+            <div class="order_date font_size_15">${thisOrderHistorys[i].date_order}</div>
+        </div>
+    <!-- one order end -->
+    `);
+    }
+}
+
+document.getElementById(`history_btn`).onclick = () => {
+    loadOrderHistory(getUserSignInIndex());
+}

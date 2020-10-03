@@ -2,6 +2,7 @@ let sadImageUrl = `./images/sad.png`;
 let successImageUrl = `./images/success.png`;
 let cartImageUrl = `./images/cart.png`;
 let questionImageUrl = `./images/question_mark.png`;
+let sandClockImageUrl = `./images/sand_clock.png`;
 
 // scroll to top button section
 mybutton = document.getElementById("to_the_top_button");
@@ -185,7 +186,7 @@ function signIn(index) {
     signUpBtn.style.display = `none`;
     signOutBtn.style.display = `block`;
     sideName.textContent = usersArr[index].user_name;
-    isNewAcc = false;
+    document.getElementById(`history_btn`).style.display = `block`;
     setUserSignInIndex(index);
     showCurrentUserRedDotBag();
     console.log(usersArr);
@@ -197,6 +198,7 @@ function signOut() {
     signOutBtn.style.display = `none`;
     sideName.textContent = `no name`;
     welcomeTitle.textContent = `Chào mừng đến với Mobile Shop. Xin bạn vui lòng đăng nhập`;
+    document.getElementById(`history_btn`).style.display = `none`;
     setUserSignInIndex(-1);
     showCurrentUserRedDotBag();
 }
@@ -222,6 +224,7 @@ function modalSignUpOnclickCallback() {
         user_name: nameInput.value,
         password: repeatPasswordInput.value,
         product_choices: [],
+        order_historys: [],
     }
     let rawData = localStorage.getItem(keyUsersLocalStorage);
     let usersArray = JSON.parse(rawData);

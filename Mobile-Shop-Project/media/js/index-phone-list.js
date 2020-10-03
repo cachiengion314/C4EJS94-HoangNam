@@ -13,6 +13,12 @@ cartIcon.onclick = () => {
     }
 }
 
+function setCurrentUserToUsersArray(currentUser) {
+    let usersArray = getUsersArray();
+    usersArray[getUserSignInIndex()] = currentUser;
+    localStorage.setItem(keyUsersLocalStorage, JSON.stringify(usersArray));
+}
+
 function removeAProductOfCurrentUserProductChoicesAt(index) {
     let usersArray = getUsersArray();
     let currentUserProducts = usersArray[getUserSignInIndex()].product_choices;
@@ -92,11 +98,34 @@ let modalPay = document.getElementById(`pay`);
 let modalPayTitle = document.getElementById(`modal_pay_title`);
 let payPriceInfo = document.getElementById(`pay_price_info`);
 let modalPayBtn = document.getElementById(`modal_pay_button`);
+let addressInput = document.getElementById(`address_input`);
+let telephoneInput = document.getElementById(`telephone_input`);
 
 modalPayBtn.onclick = () => {
     modalCart.style.display = `none`;
     modalPay.style.display = `none`;
-    notificationPopUp(`Xin chúc mừng. Bạn đã đặt hàng thành công`, successImageUrl);
+
+    let currentTime = new Date();
+    let order = {
+        user_name: getUsersArray()[getUserSignInIndex()].user_name,
+        address: addressInput.value,
+        payForm: typeSelect.value,
+        telephone_number: telephoneInput.value,
+        total_paid: createPayPriceInfo(),
+        product_choices: createChosenProductsInfo(),
+        date_order: `${currentTime.getDate()}-${currentTime.getMonth()}-${currentTime.getFullYear()}`,
+    }
+    let currentUser = getUsersArray()[getUserSignInIndex()];
+    currentUser.product_choices.splice(0, currentUser.product_choices.length);
+    currentUser.order_historys.push(order);
+    setCurrentUserToUsersArray(currentUser);
+    showCurrentUserRedDotBag();
+
+    notificationPopUp(`Xin chờ giây lát! Đơn hàng đang được xử lý...`, sandClockImageUrl, true);
+    setTimeout(() => {
+        notificationPopUp(`Xin chúc mừng. Bạn đã đặt hàng thành công`, successImageUrl);
+        console.log(getUsersArray());
+    }, randomNumberFromAToB(2, 5) * 1000);
 }
 
 cartPayBtn.onclick = () => {
@@ -111,6 +140,11 @@ cartPayBtn.onclick = () => {
     }
 }
 
+function randomNumberFromAToB(a, b) {
+    let randomRange = Math.floor(Math.random() * (b - a));
+    return randomRange + a;
+}
+
 function createPayPriceInfo() {
     let productChoices = getUsersArray()[getUserSignInIndex()].product_choices;
     let sumPrice = 0;
@@ -118,6 +152,7 @@ function createPayPriceInfo() {
         sumPrice += productChoices[i].price_number * productChoices[i].product_number;
     }
     payPriceInfo.textContent = `${sumPrice.toLocaleString()} vnd`;
+    return sumPrice;
 }
 
 function createPayTitle() {
@@ -137,6 +172,7 @@ function createChosenProductsInfo() {
         }
     }
     chosenProductsInfo.textContent = str;
+    return str;
 }
 
 function createPayTypeOptions() {
@@ -203,15 +239,15 @@ allSubnavBtn[0].onclick = () => {
 }
 allSubnavBtn[1].onclick = () => {
     clearAllSection();
-    createProductList(searchAllProducstByBrand(`apple`), createSection(`Tất cả điện thoại apple`));
+    createProductList(searchAllProducstByBrand(`apple`), createSection(`Tất cả điện thoại của apple`));
 }
 allSubnavBtn[2].onclick = () => {
     clearAllSection();
-    createProductList(searchAllProducstByBrand(`samsung`), createSection(`Tất cả điện thoại samsung`));
+    createProductList(searchAllProducstByBrand(`samsung`), createSection(`Tất cả điện thoại của samsung`));
 }
 allSubnavBtn[3].onclick = () => {
     clearAllSection();
-    createProductList(searchAllProducstByBrand(`xiaomi`), createSection(`Tất cả điện thoại xiaomi`));
+    createProductList(searchAllProducstByBrand(`xiaomi`), createSection(`Tất cả điện thoại của xiaomi`));
 }
 
 searchInput.addEventListener(`change`, () => {
@@ -252,10 +288,16 @@ function isStringInString(keyString, originString) {
     return false;
 }
 
-function notificationPopUp(notifyText, imageUrl) {
+function notificationPopUp(notifyText, imageUrl, isNeedToDisabled = false) {
     document.getElementById(`add_to_cart_success`).style.display = `block`;
     document.getElementById(`modal_add_success_title`).textContent = notifyText;
     document.getElementById(`modal_add_success_bagImg`).src = imageUrl;
+    if (isNeedToDisabled) {
+        document.getElementById(`modal_ok_button`).style.display = `none`;
+    } else {
+        document.getElementById(`modal_ok_button`).style.display = `block`;
+    }
+    document.getElementById(`modal_ok_button`).disabled = isNeedToDisabled;
 }
 
 function clearAllSection() {
@@ -355,8 +397,12 @@ function createProductList(mobiles, UlHtmlElement) {
                         product_imageUrl: mobiles[i].imageUrl,
                         product_number: 1,
                     };
-                    pushItemInProductChoicesCurrentUser(item);
-                    notificationPopUp(`Đã thêm thành công vào giỏ hàng`, successImageUrl);
+                    if (getUsersArray()[getUserSignInIndex()].product_choices.length > 5) {
+                        notificationPopUp(`Rất tiếc! Giỏ hàng đã quá nhiều mặt hàng`, sadImageUrl);
+                    } else {
+                        pushItemInProductChoicesCurrentUser(item);
+                        notificationPopUp(`Đã thêm thành công vào giỏ hàng`, successImageUrl);
+                    }
                 } else {
                     notificationPopUp(`Bạn đã thêm sản phẩm này rồi`, questionImageUrl);
                 }
