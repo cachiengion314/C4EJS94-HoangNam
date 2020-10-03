@@ -133,6 +133,13 @@ body {
     left: 54%;
 }
 
+@media screen and (max-width: 700px) {
+    .header_banner .indicate_dot {
+        width: 15px;
+        height: 15px;
+    }
+}
+
 .header_banner .direction {
     display: block;
     width: 40px;

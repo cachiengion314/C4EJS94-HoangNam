@@ -72,21 +72,17 @@
     background: #aaa;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 970px) {
     .navbar .search_container {
         float: none;
-    }
-    .navbar a,
-    .navbar input[type=text],
-    .navbar .search_container button {
-        float: none;
         display: block;
-        text-align: left;
-        width: 100%;
-        margin: 0;
-        padding: 14px;
     }
-    .navbar input[type=text] {
-        border: 1px solid #ccc;
+    .navbar .search_container button {
+        display: none;
+    }
+    .navbar .search_container input[type="text"] {
+        border-width: 1px;
+        border-style: solid;
+        border-color: black;
     }
 }

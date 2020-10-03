@@ -1,4 +1,4 @@
-/* brand name in the section  */
+/* brand name / p tag section  */
 
 .content div .brand_name {
     margin-right: 1% !important;
@@ -96,7 +96,7 @@
 
 .home_product_items .home_product_items_feature .home_product_items_feature_right_list {
     text-align: center;
-    padding-left: 2px;
+    padding-left: 17px;
     list-style-type: disc;
     font-size: 15px;
 }
@@ -174,7 +174,7 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 550px;
+        width: 80%;
         height: 320px;
     }
     .content_head {
@@ -185,6 +185,9 @@
         padding-left: 2px;
         list-style-type: none;
         font-size: 90%;
+    }
+    .content div .brand_name {
+        margin-right: 0% !important;
     }
 }
 
@@ -199,7 +202,7 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 250px;
+        width: 80%;
         height: 150px;
     }
     .content_head {
