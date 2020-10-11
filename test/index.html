@@ -1,78 +1,90 @@
 <!DOCTYPE html>
-<html>
-<title>W3.CSS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
-<style>
-    .mySlides {
-        display: none
-    }
-    
-    .w3-left,
-    .w3-right,
-    .w3-badge {
-        cursor: pointer
-    }
-    
-    .w3-badge {
-        height: 13px;
-        width: 13px;
-        padding: 0
-    }
-</style>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Mobile Shop</title>
+</head>
 
 <body>
-
-    <div class="w3-container">
-        <h2>Slideshow Indicators</h2>
-        <p>An example of using buttons to indicate how many slides there are in the slideshow, and which slide the user is currently viewing.</p>
+    <div class="header">
+        <h1>Mobile Shop</h1>
     </div>
 
-    <div class="w3-content w3-display-container" style="max-width:800px">
-        <img class="mySlides" src="../Mobile-Shop-Project/images/samsung-galaxy-note-20-ultra.jpg" style="width:100%">
-        <img class="mySlides" src="../Mobile-Shop-Project/images/avatar_3.png" style="width:100%">
-        <img class="mySlides" src="../Mobile-Shop-Project/images/940-300.jpg" style="width:100%">
-        <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-            <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-            <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#">Trang chủ</a>
+        <a href="#">Giới thiệu</a>
+    </div>
+
+    <!-- The flexible grid (content) -->
+    <div class="main">
+        <h2>Quá trình thực hiện Project:</h2>
+        <ul>
+            <h3>
+                <li>14/9 : Giao diện cơ bản vẽ tay phác thảo, lên cấu trúc Data cho Project.</li>
+            </h3>
+            <h3>
+                <li>18/9 : Hoàn thiện tương tác Doom.</li>
+            </h3>
+            <h3>
+                <li>21/9 : Hoàn thiện giao diện CSS.</li>
+            </h3>
+            <h3>
+                <li>4/10 : Hackathond Fix, Bug.</li>
+            </h3>
+        </ul>
+    </div>
+
+    <div class="row">
+        <!-- <div style="display: flex;" class="bonus"> -->
+        <div class="side">
+            <div class="avatar">
+                <h2>Giảng viên</h2>
+                <img class="img" src="/Project/ab/img/anh ĐỊnh.jpg">
+                <h3>Triệu Hữu Định</h3>
+            </div>
+            <div class="avatar">
+                <h2>Trợ giảng</h2>
+                <img class="img" src="/Project/ab/img/khanh.jpg">
+                <h3>Khánh</h3>
+            </div>
+            <div class="avatar">
+                <h2>Leader</h2>
+                <img class="img" src="/Project/ab/img/nam.jpg">
+                <h3>Hoàng Nam</h3>
+            </div>
+            <div class="avatar">
+                <h2>Member</h2>
+                <img class="img" src="/Project/ab/img/Liêm.jpg">
+                <h3>Liêm</h3>
+            </div>
+            <div class="avatar">
+                <h2>Member</h2>
+                <img class="img" src="/Project/ab/img/TA.jpg" alt="" srcset="">
+                <h3>Tuấn Anh</h3>
+            </div>
+            <div class="avatar">
+                <h2>Member</h2>
+                <img class="img" src="/Project/ab/img/duy.jpg">
+                <h3>Duy</h3>
+            </div>
+
         </div>
+
     </div>
 
-    <script>
-        var slideIndex = 1;
-        showDivs(slideIndex);
 
-        function plusDivs(n) {
-            showDivs(slideIndex += n);
-        }
+    <!-- Footer -->
+    <!-- <div class="footer">
+            <h2>Footer</h2>
+        </div> -->
+    </div>
 
-        function currentDiv(n) {
-            showDivs(slideIndex = n);
-        }
 
-        function showDivs(n) {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("demo");
-            if (n > x.length) {
-                slideIndex = 1
-            }
-            if (n < 1) {
-                slideIndex = x.length
-            }
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" w3-white", "");
-            }
-            x[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " w3-white";
-        }
-    </script>
+
     <script src="index.js"></script>
 </body>
 
